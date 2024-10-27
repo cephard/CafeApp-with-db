@@ -120,17 +120,15 @@ public class SqlQueries {
             "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
             ")";
 
-
-        // Existing table creation statements...
-
         // Alter table statements to add password column
         public static String ALTER_CUSTOMERS_ADD_PASSWORD = "ALTER TABLE Customers " +
-                "ADD COLUMN password TEXT NOT NULL";
+                "ADD COLUMN phone_number INTEGER NOT NULL";
 
         public static String ALTER_STAFF_ADD_PASSWORD = "ALTER TABLE Staff " +
                 "ADD COLUMN password TEXT NOT NULL";
 
-        // Other SQL statements...
-
-
+    public void runQuery() {
+        DataBaseSetUp dataBaseSetUp = new DataBaseSetUp();
+dataBaseSetUp.runSQLQuery(ALTER_CUSTOMERS_ADD_PASSWORD);
+    }
 }

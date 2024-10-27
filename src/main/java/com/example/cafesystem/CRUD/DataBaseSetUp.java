@@ -49,10 +49,15 @@ public class DataBaseSetUp {
     }
 
     //using a sql command inform of string create a table
-    public void createTable(String sqlCommand){
+    public void runSQLQuery(String sqlCommand){
         createConnection();
+        System.out.println("Query successful");
         updateDatabase(sqlCommand);
-        System.out.println("Table created");
+    }
+
+    //using a sql command inform of string create a table
+    public void createTable(String sqlCommand){
+        runSQLQuery(sqlCommand);
     }
 
     //Deleting table

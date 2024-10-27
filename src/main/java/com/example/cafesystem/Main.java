@@ -2,13 +2,7 @@ package com.example.cafesystem;
 
 import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Controllers.UIController;
-import com.example.cafesystem.Models.SqlQueries;
 import javafx.application.Application;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
