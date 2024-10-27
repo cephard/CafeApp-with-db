@@ -11,7 +11,7 @@ public class Customer {
     private String lastName;
     private String address;
     private String email;
-    private int phoneNumber;
+    private Long phoneNumber;
     private Date dateOfBirth;
     private String password;
 
@@ -68,11 +68,11 @@ public class Customer {
         this.email = email;
     }
 
-    public int getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

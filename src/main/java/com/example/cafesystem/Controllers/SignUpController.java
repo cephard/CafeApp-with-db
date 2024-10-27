@@ -5,6 +5,7 @@ import com.example.cafesystem.Models.Customer;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -33,8 +34,6 @@ public class SignUpController extends UIController {
 
     //check password if they match
     public String checkPassword(){
-        System.out.println(passwordField.getText() +"  " + confirmPasswordField.getText());
-
         if(!passwordField.getText().equals(confirmPasswordField.getText())){
             //do a pop-up to show wrong password
             return null;
@@ -45,11 +44,12 @@ public class SignUpController extends UIController {
     }
 
 
-    public int checkPhoneNumber(){
-        return Integer.parseInt(phoneNumberField.getText());
+    public Long checkPhoneNumber(){
+        return Long.parseLong(phoneNumberField.getText());
     }
 
-    public void createCustomer(){
+    public void createCustomer() throws IOException {
+        Stage stage = new Stage();
         customer = new Customer();
         customer.setFirstName(firstNameField.getText());
         customer.setLastName(lastNameField.getText());
@@ -60,5 +60,8 @@ public class SignUpController extends UIController {
         customer.setPassword(checkPassword());
 
         System.out.println(customer.toString());
+        UIController.showPopup("popup", "/popup");
+      //  UIController.setPopUpText(customer.toString());
+
 }
 }

@@ -8,9 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.SignUpController">
-   <children>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.SignUpController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="20.0">
                <children>
@@ -22,14 +22,14 @@
                   </VBox>
                   <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="600.0" spacing="5.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" />
-                        <DatePicker fx:id="dataOfBirthField" promptText="01/01/2000" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LastName" />
+                        <TextField fx:id="lastNameField" prefHeight="31.0" prefWidth="163.0" promptText="last name" />
                      </children>
                   </VBox>
                   <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="600.0" spacing="5.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LastName" />
-                        <TextField fx:id="lastNameField" prefHeight="31.0" prefWidth="163.0" promptText="last name" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" />
+                        <DatePicker fx:id="dataOfBirthField" promptText="01/01/2000" />
                      </children>
                   </VBox>
                </children>
@@ -42,7 +42,7 @@
                   <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="600.0" spacing="5.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
-                        <TextField fx:id="addressField" prefHeight="31.0" prefWidth="163.0" promptText="POSTCODE" />
+                        <TextField fx:id="addressField" promptText="POSTCODE" />
                      </children>
                   </VBox>
                </children>
@@ -109,8 +109,8 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="372.0" spacing="20.0">
                      <children>
-                        <Button fx:id="backButton"  mnemonicParsing="false" prefHeight="39.0" prefWidth="66.0" text="Back" />
-                        <Button fx:id="sigUpButton" onAction="#createCustomer" layoutX="84.0" layoutY="132.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="80.0" text="SignUP" />
+                        <Button fx:id="backButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="66.0" text="Back" />
+                        <Button fx:id="sigUpButton" layoutX="84.0" layoutY="132.0" mnemonicParsing="false" onAction="#createCustomer" prefHeight="39.0" prefWidth="80.0" text="SignUP" />
                      </children>
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" />
@@ -123,5 +123,5 @@
             </VBox>
          </children>
       </VBox>
-   </children>
-</AnchorPane>
+   </center>
+</BorderPane>
