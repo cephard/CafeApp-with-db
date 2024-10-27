@@ -13,7 +13,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        UIController.loadNewStage(stage,"/login");
+        UIController.loadNewStage(stage,"/menu");
+
     }
 
     public static void main(String[] args) {

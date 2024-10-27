@@ -122,7 +122,7 @@ public class SqlQueries {
 
         // Alter table statements to add password column
         public static String ALTER_CUSTOMERS_ADD_PASSWORD = "ALTER TABLE Customers " +
-                "ADD COLUMN phone_number INTEGER NOT NULL";
+                "ADD COLUMN email TEXT NOT NULL";
 
         public static String ALTER_STAFF_ADD_PASSWORD = "ALTER TABLE Staff " +
                 "ADD COLUMN password TEXT NOT NULL";

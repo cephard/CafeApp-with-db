@@ -1,5 +1,6 @@
 package com.example.cafesystem.Controllers;
 
+import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Models.Authenticator;
 import com.example.cafesystem.Models.Customer;
 import javafx.scene.control.DatePicker;
@@ -8,6 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class SignUpController extends UIController {
 
@@ -20,7 +24,10 @@ public class SignUpController extends UIController {
     public TextField addressField;
     public PasswordField confirmPasswordField;
 
+    DataBaseSetUp dataBaseSetUp;
     Customer customer;
+    PopUpController popUpController;
+
 
     public void switchToLogIn() throws IOException {
     UIController.setRoot("/login");
@@ -43,7 +50,6 @@ public class SignUpController extends UIController {
         }
     }
 
-
     public Long checkPhoneNumber(){
         return Long.parseLong(phoneNumberField.getText());
     }
@@ -60,8 +66,33 @@ public class SignUpController extends UIController {
         customer.setPassword(checkPassword());
 
         System.out.println(customer.toString());
-        UIController.showPopup("popup", "/popup");
-      //  UIController.setPopUpText(customer.toString());
+        insertCustomer(customer);
+      //  popUpController.showPopup("popup", "/popup", "Account successfully created");
+    }
 
-}
+    // Insert method to save customer data
+    public void insertCustomer(Customer customer) {
+         DataBaseSetUp dataBaseSetUp = new DataBaseSetUp();
+
+        dataBaseSetUp.createConnection();
+        String sql = "INSERT INTO Customers (first_name, last_name, email, date_of_birth, phone_number, address, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        try (PreparedStatement pstmt = dataBaseSetUp.getConnection().prepareStatement(sql)) {
+            pstmt.setString(1, customer.getFirstName());
+            pstmt.setString(2, customer.getLastName());
+            pstmt.setString(3, customer.getEmail());
+            pstmt.setString(4, customer.getDateOfBirth().toString());
+            pstmt.setLong(5, customer.getPhoneNumber());
+            pstmt.setString(6, customer.getAddress());
+            pstmt.setString(7, customer.getPassword());
+
+            pstmt.executeUpdate();
+
+            System.out.println("Customer added successfully!");
+        } catch (SQLException e) {
+            System.err.println("Failed to insert customer: " + e.getMessage());
+        } finally {
+           dataBaseSetUp.stopConnection();
+        }
+    }
 }

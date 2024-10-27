@@ -23,22 +23,6 @@ public class UIController {
         stage.show();
     }
 
-    public static void showPopup(String title, String FXMLPath) throws IOException {
-        // Load FXML for the popup
-        Parent popupContent = loadFXML(FXMLPath);
-
-        // Create a new Stage for the popup
-        Stage popupStage = new Stage();
-        popupStage.initModality(Modality.APPLICATION_MODAL);  // Block interaction with other windows
-        popupStage.setTitle(title);
-        popupStage.setScene(new Scene(popupContent, 426, 240));  // Match the prefWidth/prefHeight in FXML
-
-        popupStage.setResizable(false);
-        popupStage.setFullScreen(false);
-
-        popupStage.showAndWait();  // Display the popup and wait until it's closed
-    }
-
 
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));

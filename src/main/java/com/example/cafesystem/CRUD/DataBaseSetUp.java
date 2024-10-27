@@ -1,9 +1,8 @@
 package com.example.cafesystem.CRUD;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import com.example.cafesystem.Models.Customer;
+
+import java.sql.*;
 
 public class DataBaseSetUp {
 
@@ -20,6 +19,10 @@ public class DataBaseSetUp {
         } catch (SQLException e) {
             System.err.println("Failed to create connection: " + e.getMessage());
         }
+    }
+
+    public  Connection getConnection(){
+        return connection;
     }
 
     //updating the database base after every command
@@ -68,5 +71,6 @@ public class DataBaseSetUp {
         updateDatabase(sqlCommand);
 
     }
+
 }
 

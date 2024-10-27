@@ -235,7 +235,7 @@
 
 .blueberry-text {
     -fx-font-family: "Arial", sans-serif;
-    -fx-font-size: 1.2em;
+    -fx-font-size: 1em;
     -fx-fill: #333;
     -fx-stroke-type: outside;
     -fx-font-weight: bold;

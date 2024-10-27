@@ -8,12 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane minHeight="240.0" minWidth="426.0" prefHeight="240.0" prefWidth="426.0" stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.UIController">
+<AnchorPane minHeight="240.0" minWidth="426.0" prefHeight="240.0" prefWidth="426.0" stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.PopUpController">
    <children>
       <BorderPane prefHeight="240.0" prefWidth="426.0">
-         <center>
-            <Text fx:id="popUpText" strokeType="OUTSIDE" strokeWidth="0.0" text="Pop Up Text" textAlignment="CENTER" wrappingWidth="407.6708984375" BorderPane.alignment="CENTER" />
-         </center>
          <bottom>
             <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER">
                <BorderPane.margin>
@@ -21,6 +18,9 @@
                </BorderPane.margin>
             </Button>
          </bottom>
+         <center>
+            <Label fx:id="popUpText" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="354.0" text="Pop Up Text" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
