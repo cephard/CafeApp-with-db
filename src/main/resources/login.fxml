@@ -38,7 +38,7 @@
                             <font>
                                 <Font size="15.0" />
                             </font></Label>
-                        <TextField fx:id="UserNameButton" promptText="Enter User Name">
+                        <TextField fx:id="UserNameField" promptText="Enter User Name">
                             <font>
                                 <Font size="15.0" />
                             </font></TextField>
@@ -46,7 +46,7 @@
                             <font>
                                 <Font size="15.0" />
                             </font></Label>
-                        <PasswordField fx:id="passwordButton" promptText="Enter User Password">
+                        <PasswordField fx:id="passwordField" promptText="Enter User Password">
                             <font>
                                 <Font size="15.0" />
                             </font></PasswordField>
@@ -59,7 +59,7 @@
                     <children>
                         <HBox>
                             <children>
-                                <Label prefHeight="21.0" prefWidth="149.0" text="Dont have an account">
+                                <Label prefHeight="21.0" prefWidth="149.0" text="Don't have an account">
                                     <font>
                                         <Font size="15.0" />
                                     </font>

@@ -6,7 +6,7 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -17,7 +17,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="2bbc3cb6-ba51-4f73-b957-15a687398e32">
-      <console name="Connection" type="STANDARD" schema="" session="Main" />
+      <console name="Connection" type="STANDARD" schema="database" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -29,9 +29,22 @@
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="2bbc3cb6-ba51-4f73-b957-15a687398e32" />
   </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="2bbc3cb6-ba51-4f73-b957-15a687398e32" dataset="database.Events" active-filter-id="" />
+    <filter-actions connection-id="2bbc3cb6-ba51-4f73-b957-15a687398e32" dataset="database.Orders" active-filter-id="" />
+    <filter-actions connection-id="2bbc3cb6-ba51-4f73-b957-15a687398e32" dataset="database.Customers" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
+  </component>
+  <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
+    <recently-used-interfaces>
+      <mapping database-type="SQLITE" interface-id="DEFAULT" />
+    </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
@@ -52,7 +65,7 @@
           <tns-folder value="" />
           <tns-profile value="" />
           <files>
-            <file path="database.db" schema="database" />
+            <file path="C:\Users\cepha\IdeaProjects\CafeSystem\database.db" schema="database" />
           </files>
           <type value="NONE" />
           <user value="" />
@@ -527,5 +540,9 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
+    <execution-variable-types />
   </component>
 </project>

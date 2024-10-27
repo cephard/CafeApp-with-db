@@ -59,8 +59,9 @@ public class DataBaseSetUp {
     public void deleteTable(String tableName){
         createConnection();
         String sqlCommand = "DROP TABLE IF EXISTS " + tableName;
-        updateDatabase(sqlCommand);
         System.out.println("Table deleted");
+        updateDatabase(sqlCommand);
+
     }
 }
 
