@@ -64,7 +64,7 @@
                                         <Font size="15.0" />
                                     </font>
                                 </Label>
-                                <Text fx:id="signUpText" fill="#00a1ff"  text="Sign Up!" underline="true">
+                                <Text fx:id="signUpText" fill="#00a1ff"  onMouseClicked="#switchToSignUp" text="Sign Up!" underline="true">
                                     <font>
                                         <Font size="15.0" />
                                     </font>

@@ -1,12 +1,15 @@
 package com.example.cafesystem.Controllers;
 
+import com.example.cafesystem.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public class LoginController {
+import java.io.IOException;
+
+public class LoginController extends UIController {
 
 
     public TextField UserNameField;
@@ -32,5 +35,10 @@ public class LoginController {
 
     public String getPassword(){
         return password;
+    }
+
+    @FXML
+    public void switchToSignUp() throws IOException {
+        UIController.setRoot("/signup");
     }
 }

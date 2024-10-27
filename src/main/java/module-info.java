@@ -9,6 +9,7 @@ module com.example.cafesystem {
     requires org.slf4j;
 
     opens com.example.cafesystem to javafx.fxml;
+    opens com.example.cafesystem.Controllers to javafx.fxml;
     exports com.example.cafesystem;
     exports com.example.cafesystem.Controllers to javafx.fxml;
 
