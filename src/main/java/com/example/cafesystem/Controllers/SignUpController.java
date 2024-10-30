@@ -3,6 +3,7 @@ package com.example.cafesystem.Controllers;
 import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Models.Authenticator;
 import com.example.cafesystem.Models.Customer;
+import com.example.cafesystem.Models.SqlQueries;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -27,7 +28,7 @@ public class SignUpController extends UIController {
     DataBaseSetUp dataBaseSetUp;
     Customer customer;
     PopUpController popUpController;
-
+    SqlQueries sqlQueries;
 
     public void switchToLogIn() throws IOException {
     UIController.setRoot("/login");
@@ -66,12 +67,22 @@ public class SignUpController extends UIController {
         customer.setPassword(checkPassword());
 
         System.out.println(customer.toString());
-        insertCustomer(customer);
+
+        sqlQueries = new SqlQueries();
+        //sqlQueries.insertNewRecord("Customers",);
+     //   insertCustomer(customer);
       //  popUpController.showPopup("popup", "/popup", "Account successfully created");
     }
 
+
+
+
+
+
+
+
     // Insert method to save customer data
-    public void insertCustomer(Customer customer) {
+    public void insertCustomerr(Customer customer) {
          DataBaseSetUp dataBaseSetUp = new DataBaseSetUp();
 
         dataBaseSetUp.createConnection();

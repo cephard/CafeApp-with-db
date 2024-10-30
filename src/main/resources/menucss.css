@@ -255,7 +255,6 @@
     -fx-wrap-text: true;
 }
 
-
 /* Style for ListView */
 .list-view {
     -fx-control-inner-background: #f0f0f0;
@@ -317,3 +316,20 @@ list-view .cell {
 -fx-background-color:#FFFFFF;
 }
 
+.menuItemDetail{
+
+    -fx-font-size: 1.1em;
+    -fx-font-weight: bold;
+
+}
+
+.menuItemCategories {
+    -fx-border-color: transparent transparent #cccccc transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.menuItemCategories:hover {
+ -fx-font-size: 1.1em;
+    -fx-font-weight: bold;
+       -fx-text-fill: #FF7F50;
+}

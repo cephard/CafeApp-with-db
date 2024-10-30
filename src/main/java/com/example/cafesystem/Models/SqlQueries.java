@@ -2,8 +2,14 @@ package com.example.cafesystem.Models;
 import com.example.cafesystem.CRUD.DataBaseSetUp;
 
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class SqlQueries {
+
+    DataBaseSetUp dataBaseSetUp = new DataBaseSetUp();
 
     public static String CREATE_MENU_ITEMS_TABLE = "CREATE TABLE MenuItems (" +
             "menu_item_id INTEGER PRIMARY KEY," +
@@ -120,15 +126,37 @@ public class SqlQueries {
             "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
             ")";
 
-        // Alter table statements to add password column
-        public static String ALTER_CUSTOMERS_ADD_PASSWORD = "ALTER TABLE Customers " +
+    // Alter table statements to add password column
+    public static String ALTER_CUSTOMERS_ADD_PASSWORD = "ALTER TABLE Customers " +
                 "ADD COLUMN email TEXT NOT NULL";
 
         public static String ALTER_STAFF_ADD_PASSWORD = "ALTER TABLE Staff " +
                 "ADD COLUMN password TEXT NOT NULL";
 
-    public void runQuery() {
-        DataBaseSetUp dataBaseSetUp = new DataBaseSetUp();
-dataBaseSetUp.runSQLQuery(ALTER_CUSTOMERS_ADD_PASSWORD);
-    }
+
+        public String insertNewRecord(String tableName,ArrayList<String> columns, ArrayList<Object> values) {
+            if (columns.size() != values.size()) {
+                throw new IllegalArgumentException("Values must be the same as the values in record");
+            }
+
+            dataBaseSetUp.createConnection();
+
+            String columnNames = String.join(", ", columns);
+            String placeholders = String.join(", ", Collections.nCopies(columns.size(), "?"));
+            String sqlCommand = String.format("INSERT INTO %s(%s) VALUES (%s)", tableName, columnNames, placeholders);
+
+            try (PreparedStatement preparedStatement = dataBaseSetUp.getConnection().prepareStatement(sqlCommand)) {
+                for (int i = 0; i < values.size(); i++) {
+                    preparedStatement.setObject(i + 1, values.get(i));
+                }
+                preparedStatement.executeUpdate();
+
+                return ("Successfully inserted record into " + tableName + "!");
+            } catch (SQLException e) {
+                System.err.println("Failed to insert record into " + tableName + ": " + e.getMessage());
+                return ("Failed to insert record into " + tableName + "! " + e.getMessage());
+            } finally {
+                dataBaseSetUp.stopConnection();
+            }
+        }
 }

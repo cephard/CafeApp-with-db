@@ -1,36 +1,28 @@
 package com.example.cafesystem.Models;
 
 public class MenuItem {
-
-    private int itemId;
-    private String itemName;
+    private String menuItemName;
     private String description;
-    private Double price;
+    private double price;
     private String category;
-    private boolean isAvailable = true;
+    private String calories;
+    private boolean isAvailable;
 
-    public int getItemId() {
-        return itemId;
+    public MenuItem(String menuItemName,String description,double price,String category,String calories){
+         this.menuItemName = menuItemName;
+        this.description = description;
+        this.price =price;
+        this.category = category;
+        this.calories = calories;
+        isAvailable = true;
     }
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
+    public String getMenuItemName() {
+        return menuItemName;
     }
 
-    public boolean isAvailable() {
-        return isAvailable;
-    }
-
-    public void setAvailable(boolean available) {
-        isAvailable = available;
-    }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setMenuItemName(String menuItemName) {
+        this.menuItemName = menuItemName;
     }
 
     public String getDescription() {
@@ -41,11 +33,11 @@ public class MenuItem {
         this.description = description;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -55,5 +47,25 @@ public class MenuItem {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
+    }
+
+    public String getCalories() {
+        return calories;
+    }
+
+    public void setCalories(String calories) {
+        this.calories = calories;
+    }
+
+    public void InsertMenuItem(){
+
     }
 }
