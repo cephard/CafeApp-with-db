@@ -1,5 +1,7 @@
 package com.example.cafesystem.Models;
 
+import java.util.HashMap;
+
 public class MenuItem {
     private String menuItemName;
     private String description;
@@ -7,6 +9,7 @@ public class MenuItem {
     private String category;
     private int calories;
     private boolean isAvailable;
+    private String imageLocation;
 
     public MenuItem(String menuItemName, String description, double price, String category, int calories) {
         this.menuItemName = menuItemName;
@@ -97,7 +100,24 @@ public class MenuItem {
         stringBuilder.append(category);
         stringBuilder.append(calories);
         stringBuilder.append(isAvailable);
+        stringBuilder.append(imageLocation);
 
         return stringBuilder.toString();
+    }
+
+    public HashMap<String,Object>menuItemSet(){
+        HashMap<String,Object> menuItem = new HashMap<String,Object>();
+        menuItem.put("menu_item_name",menuItemName);
+        menuItem.put("price", price);
+        menuItem.put("calories", calories);
+        menuItem.put("category", category);
+        menuItem.put("description", description);
+        menuItem.put("is_available", isAvailable);
+        menuItem.put("image_location", imageLocation);
+        return menuItem;
+    }
+
+    public void setImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
     }
 }

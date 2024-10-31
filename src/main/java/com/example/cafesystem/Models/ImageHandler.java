@@ -29,13 +29,15 @@ public class ImageHandler {
         }
     }
 
-    public void saveImg(File selectedImg,String imageName) {
-        //save image using URI
+    //save image using URI
+    public String saveImg(File selectedImg,String imageName) {
+        String newLocation = "src/main/resources/Images/" + imageName +".png";
         try {
-            Files.copy(selectedImg.toPath(), Paths.get("src/main/resources/Images/" + imageName +".png"));
+            Files.copy(selectedImg.toPath(), Paths.get(newLocation));
             System.out.println("success");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return newLocation;
     }
 }

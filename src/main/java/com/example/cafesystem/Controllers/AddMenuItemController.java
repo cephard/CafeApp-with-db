@@ -17,7 +17,9 @@ import java.nio.file.Paths;
 
 
 public class AddMenuItemController {
-    public TextField itemCalories;
+    private final ImageHandler imageHandler = new ImageHandler();
+    private File selectedImage;
+    @FXML public TextField itemCalories;
     @FXML public TextArea itemDescription;
     @FXML public ImageView itemImage;
     @FXML public CheckBox isAvailable;
@@ -30,6 +32,7 @@ public class AddMenuItemController {
 
     MenuItem menuItem = new MenuItem();
 
+
     public void getSelectedCategory(javafx.scene.input.MouseEvent mouseEvent) {
         Label selectedLabel = (Label) mouseEvent.getSource();
         String category = selectedLabel.getText();
@@ -38,44 +41,8 @@ public class AddMenuItemController {
     }
 
     public void selectImage(){
-        ImageHandler imageHandler = new ImageHandler();
-        File selectedImage = imageHandler.loadImage();
+        selectedImage = imageHandler.loadImage();
         imageHandler.regenerateImage(selectedImage, itemImage);
-        imageHandler.saveImg(selectedImage, itemName.getText());
-
-    }
-
-    public void selectImagee() {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(new File("src/main/resources/Images"));
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Images", "*.jpg", "*.jpeg"));
-
-        // Show the file chooser dialog
-        File selectedFile = fileChooser.showOpenDialog(null);
-
-        // Check if a file was selected
-        if (selectedFile != null) {
-            // Get the path of the selected file
-            String imagePath = selectedFile.getAbsolutePath();
-
-            // Optional: Display the image path in a TextField or Label
-            System.out.println("Selected Image Path: " + imagePath);
-
-            //regenerate image from URI
-            String imageURI = selectedFile.toURI().toString();
-            itemImage.setImage(new Image(imageURI));
-
-            //save image using uri
-            try {
-                Files.copy(selectedFile.toPath(), Paths.get("src/main/resources/Images/" + "ceph2.png"));
-                System.out.println("success");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-        } else {
-            System.out.println("File selection cancelled.");
-        }
     }
 
     public void addMenuItem() {
@@ -84,9 +51,12 @@ public class AddMenuItemController {
         menuItem.setPrice(itemPrice.getText());
         menuItem.setCategory(selectedCategory);
         menuItem.setCalories(itemCalories.getText());
+        menuItem.setImageLocation(imageHandler.saveImg(selectedImage, itemName.getText()));
+        menuItem.setAvailable(isAvailable.isSelected());
+
+        menuItem.menuItemSet();
 
         System.out.println(menuItem.toString());
+        System.out.println("All is good");
     }
-
-
 }
