@@ -12,13 +12,16 @@ import java.io.IOException;
 
 public class PopUpController extends UIController{
 
+    @FXML private Text popUpText;
 
-    public Label popUpText;
 
-    @FXML
+    public PopUpController(){
+        popUpText = new Text();
+    }
 
-    public void showPopup(String title, String FXMLPath, String popUpMsg) throws IOException {
-        Parent popupContent = loadFXML(FXMLPath); // Load FXML for the popup
+    @FXML public void showPopup(String title, String popUpMsg) throws IOException {
+        popUpText.setText(popUpMsg);
+        Parent popupContent = loadFXML("/popup"); // Load FXML for the popup
 
         Stage popupStage = new Stage();
         popupStage.initModality(Modality.APPLICATION_MODAL);  // Block interaction with other windows
@@ -27,8 +30,12 @@ public class PopUpController extends UIController{
 
         popupStage.setResizable(false);
         popupStage.setFullScreen(false);
-
+        System.out.println(popUpMsg);
 
         popupStage.showAndWait();  // Display the popup and wait until it's closed
+    }
+
+    public void updatePopUpMsg(){
+        popUpText.setText("new text");
     }
 }

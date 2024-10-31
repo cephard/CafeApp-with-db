@@ -1,9 +1,14 @@
 package com.example.cafesystem.Models;
 
+import com.example.cafesystem.CRUD.DataBaseSetUp;
 import javafx.scene.control.DatePicker;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.HashMap;
 
 public class Customer {
     private String firstName;
@@ -88,4 +93,15 @@ public class Customer {
                 '}';
     }
 
+    public HashMap<String, Object> customerSet() {
+        HashMap<String, Object>customer = new HashMap<String, Object>();
+        customer.put("first_name", firstName);
+        customer.put("last_name",lastName);
+        customer.put("email",email);
+        customer.put("date_of_birth",dateOfBirth.toString());
+        customer.put("phone_number",phoneNumber);
+        customer.put("address",address);
+        customer.put("password",password);
+        return customer;
+    }
 }

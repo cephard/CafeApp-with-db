@@ -8,129 +8,140 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.AddMenuItemController">
+<BorderPane prefHeight="700.0" stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.AddMenuItemController">
     <center>
-        <GridPane alignment="CENTER" hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
+        <GridPane alignment="CENTER" hgap="10.0" maxWidth="600.0" vgap="10.0" BorderPane.alignment="CENTER">
             <columnConstraints>
-            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="25.0" prefWidth="50.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints vgrow="ALWAYS" />
-            <RowConstraints vgrow="ALWAYS" />
-            <RowConstraints vgrow="ALWAYS" />
-            <RowConstraints vgrow="ALWAYS" />
-            <RowConstraints vgrow="ALWAYS" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
-            <RowConstraints maxHeight="70.0" minHeight="-Infinity" vgrow="SOMETIMES" />
+                <RowConstraints vgrow="ALWAYS" />
+                <RowConstraints vgrow="ALWAYS" />
+                <RowConstraints valignment="TOP" vgrow="ALWAYS" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="70.0" minHeight="-Infinity" vgrow="SOMETIMES" />
             </rowConstraints>
-         <BorderPane.margin>
-            <Insets left="2.5" right="2.5" top="2.5" />
-         </BorderPane.margin>
-         <children>
-            <Label styleClass="menuItemDetail" text="Name " GridPane.columnIndex="1" />
-            <TextField fx:id="itemPrice" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField fx:id="itemDescription" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField fx:id="itemName" GridPane.columnIndex="2" />
-            <Label styleClass="menuItemDetail" text="Category" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label styleClass="menuItemDetail" text="Description" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label styleClass="menuItemDetail" text="Available" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label styleClass="menuItemDetail" text="Price" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Accordion GridPane.columnIndex="2" GridPane.rowIndex="4">
-              <panes>
-                <TitledPane animated="false" contentDisplay="CENTER" text="Category">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <VBox alignment="CENTER_LEFT" prefHeight="180.0" prefWidth="200.0" spacing="15.0">
-                                 <children>
-                                    <AnchorPane prefHeight="36.0" prefWidth="170.0" styleClass="menuItemCategories">
+            <BorderPane.margin>
+                <Insets left="2.5" right="2.5" top="2.5" />
+            </BorderPane.margin>
+            <children>
+                <Label styleClass="menuItemDetail" text="Name " />
+                <TextField fx:id="itemPrice" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="itemName" GridPane.columnIndex="1" />
+                <Label styleClass="menuItemDetail" text="Category" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label styleClass="menuItemDetail" text="Description" GridPane.rowIndex="1" />
+                <Label styleClass="menuItemDetail" text="Available" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Label styleClass="menuItemDetail" text="Price" GridPane.rowIndex="2" />
+                <Accordion GridPane.columnIndex="3" GridPane.rowIndex="3">
+                    <panes>
+                        <TitledPane animated="false" contentDisplay="CENTER" text="Category">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0">
+                                    <children>
+                              <ScrollPane prefHeight="180.0" prefViewportHeight="180.0" prefViewportWidth="200.0">
+                                 <content>
+                                    <AnchorPane>
                                        <children>
-                                          <Label fx:id="beverage" text="Beverage">
-                                             <padding>
-                                                <Insets left="30.0" />
-                                             </padding>
-                                          </Label>
+                                                      <AnchorPane layoutY="39.0" minHeight="0.0" minWidth="0.0" prefHeight="36.0" styleClass="menuItemCategories">
+                                                          <children>
+                                                              <Label fx:id="breakfast" onMouseClicked="#getSelectedCategory" text="Breakfast">
+                                                                  <padding>
+                                                                      <Insets left="30.0" />
+                                                                  </padding>
+                                                              </Label>
+                                                          </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane prefHeight="36.0" styleClass="menuItemCategories">
+                                                          <children>
+                                                              <Label fx:id="beverage" onMouseClicked="#getSelectedCategory" text="Beverage">
+                                                                  <padding>
+                                                                      <Insets left="30.0" />
+                                                                  </padding>
+                                                              </Label>
+                                                          </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane layoutY="78.0" minHeight="0.0" minWidth="0.0" prefHeight="36.0" styleClass="menuItemCategories">
+                                                          <children>
+                                                              <Label fx:id="salad" onMouseClicked="#getSelectedCategory" text="Salad">
+                                                                  <padding>
+                                                                      <Insets left="30.0" />
+                                                                  </padding>
+                                                              </Label>
+                                                          </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane layoutY="117.0" minHeight="0.0" minWidth="0.0" prefHeight="36.0" styleClass="menuItemCategories">
+                                                          <children>
+                                                              <Label fx:id="soup" onMouseClicked="#getSelectedCategory" text="Soup">
+                                                                  <padding>
+                                                                      <Insets left="30.0" />
+                                                                  </padding>
+                                                              </Label>
+                                                          </children>
+                                                      </AnchorPane>
+                                                      <AnchorPane layoutY="156.0" prefHeight="36.0" styleClass="menuItemCategories">
+                                                          <children>
+                                                              <Label fx:id="dessert" onMouseClicked="#getSelectedCategory" text="Dessert">
+                                                                  <padding>
+                                                                      <Insets left="30.0" />
+                                                                  </padding>
+                                                              </Label>
+                                                          </children>
+                                                      </AnchorPane>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="170.0" styleClass="menuItemCategories">
-                                       <children>
-                                          <Label fx:id="breakfast" text="Breakfast">
-                                             <padding>
-                                                <Insets left="30.0" />
-                                             </padding>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="170.0" styleClass="menuItemCategories">
-                                       <children>
-                                          <Label fx:id="salad" text="Salad">
-                                             <padding>
-                                                <Insets left="30.0" />
-                                             </padding>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="36.0" prefWidth="170.0" styleClass="menuItemCategories">
-                                       <children>
-                                          <Label fx:id="soup" text="Soup">
-                                             <padding>
-                                                <Insets left="30.0" />
-                                             </padding>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="36.0" prefWidth="170.0" styleClass="menuItemCategories">
-                                       <children>
-                                          <Label fx:id="dessert" text="Dessert">
-                                             <padding>
-                                                <Insets left="30.0" />
-                                             </padding>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </VBox>
-                           </children></AnchorPane>
-                  </content>
-                </TitledPane>
-              </panes>
-            </Accordion>
-            <CheckBox fx:id="isAvailable" mnemonicParsing="false" styleClass="menuItemDetail" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-         </children>
+                                 </content>
+                              </ScrollPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+                <CheckBox fx:id="isAvailable" mnemonicParsing="false" selected="true" styleClass="menuItemDetail" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <Label styleClass="menuItemDetail" text="Upload Image" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Label styleClass="menuItemDetail" text="Calories" GridPane.columnIndex="3" />
+                <TextField fx:id="itemCalories" GridPane.columnIndex="4" />
+                <TextArea fx:id="itemDescription" prefHeight="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <children>
+                  <ImageView fx:id="itemImage" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                      <Button mnemonicParsing="false" onMouseClicked="#selectImage" text="Upload" />
+               </children>
+            </VBox>
+            </children>
         </GridPane>
     </center>
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
-   <bottom>
-        <HBox alignment="BOTTOM_RIGHT" fillHeight="false" prefHeight="39.0" prefWidth="476.0" spacing="20.0" BorderPane.alignment="CENTER">
-           <children>
-               <Button fx:id="backButton" styleClass="main-button" text="Back" />
-               <Button fx:id="addButton" styleClass="main-button" text="Add" />
-           </children>
-         <BorderPane.margin>
-            <Insets bottom="20.0" left="5.0" right="5.0" top="5.0" />
-         </BorderPane.margin>
+    <bottom>
+        <HBox alignment="CENTER" fillHeight="false" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="backButton" styleClass="main-button" text="Back" />
+                <Button fx:id="addButton" onAction="#addMenuItem" styleClass="main-button" text="Add" />
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="5.0" right="5.0" top="5.0" />
+            </BorderPane.margin>
         </HBox>
-   </bottom>
-   <top>
-      <StackPane prefHeight="37.0" prefWidth="833.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox alignment="CENTER_RIGHT" spacing="20.0">
-               <children>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="189.0" text="Staff Name" textAlignment="CENTER" />
-               </children>
-               <padding>
-                  <Insets bottom="5.0" right="20.0" top="5.0" />
-               </padding>
-            </HBox>
-         </children>
-      </StackPane>
-   </top>
+    </bottom>
+    <top>
+        <StackPane prefHeight="37.0" prefWidth="833.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_RIGHT" spacing="20.0">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="189.0" text="Staff Name" textAlignment="CENTER" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" right="20.0" top="5.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </StackPane>
+    </top>
 </BorderPane>

@@ -1,11 +1,12 @@
 package com.example.cafesystem.Models;
+
 import com.example.cafesystem.CRUD.DataBaseSetUp;
 
 import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 public class SqlQueries {
 
@@ -49,7 +50,7 @@ public class SqlQueries {
             "last_name VARCHAR(100) NOT NULL," +
             "date_of_birth DATE NOT NULL," +
             "address VARCHAR(255) NOT NULL," +
-            "password TEXT NOT NULL,"+
+            "password TEXT NOT NULL," +
             "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP," +
             "updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
             ")";
@@ -65,7 +66,7 @@ public class SqlQueries {
             "driver_id INTEGER," +
             "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP," +
             "updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
-           // "FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)," +
+            // "FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)," +
             //"FOREIGN KEY (driver_id) REFERENCES Staff(staff_id)," +
             ")";
 
@@ -81,7 +82,7 @@ public class SqlQueries {
             "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP," +
             "updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
             //"FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)," +
-           // "FOREIGN KEY (table_id) REFERENCES Tables(table_id)," +
+            // "FOREIGN KEY (table_id) REFERENCES Tables(table_id)," +
             ");";
 
 
@@ -89,7 +90,7 @@ public class SqlQueries {
             "staff_id INTEGER PRIMARY KEY," +
             "first_name VARCHAR(100) NOT NULL," +
             "last_name VARCHAR(100) NOT NULL," +
-            "password TEXT NOT NULL,"+
+            "password TEXT NOT NULL," +
             "role VARCHAR(50) NOT NULL," +
             "work_hours INTEGER," +
             "total_hours_worked INTEGER DEFAULT 0," +
@@ -128,35 +129,37 @@ public class SqlQueries {
 
     // Alter table statements to add password column
     public static String ALTER_CUSTOMERS_ADD_PASSWORD = "ALTER TABLE Customers " +
-                "ADD COLUMN email TEXT NOT NULL";
+            "ADD COLUMN email TEXT NOT NULL";
 
-        public static String ALTER_STAFF_ADD_PASSWORD = "ALTER TABLE Staff " +
-                "ADD COLUMN password TEXT NOT NULL";
+    public static String ALTER_STAFF_ADD_PASSWORD = "ALTER TABLE Staff " +
+            "ADD COLUMN password TEXT NOT NULL";
 
 
-        public String insertNewRecord(String tableName,ArrayList<String> columns, ArrayList<Object> values) {
-            if (columns.size() != values.size()) {
-                throw new IllegalArgumentException("Values must be the same as the values in record");
-            }
-
-            dataBaseSetUp.createConnection();
-
-            String columnNames = String.join(", ", columns);
-            String placeholders = String.join(", ", Collections.nCopies(columns.size(), "?"));
-            String sqlCommand = String.format("INSERT INTO %s(%s) VALUES (%s)", tableName, columnNames, placeholders);
-
-            try (PreparedStatement preparedStatement = dataBaseSetUp.getConnection().prepareStatement(sqlCommand)) {
-                for (int i = 0; i < values.size(); i++) {
-                    preparedStatement.setObject(i + 1, values.get(i));
-                }
-                preparedStatement.executeUpdate();
-
-                return ("Successfully inserted record into " + tableName + "!");
-            } catch (SQLException e) {
-                System.err.println("Failed to insert record into " + tableName + ": " + e.getMessage());
-                return ("Failed to insert record into " + tableName + "! " + e.getMessage());
-            } finally {
-                dataBaseSetUp.stopConnection();
-            }
+    public String insertNewRecord(String tableName, HashMap<String, Object> entries) {
+        if (entries.isEmpty()) {
+            throw new IllegalArgumentException("Entries cannot be empty.");
         }
+
+        dataBaseSetUp.createConnection();
+
+        String columnNames = String.join(", ", entries.keySet());
+        String placeHolders = String.join(", ", Collections.nCopies(entries.size(), "?"));
+        String sqlCommand = String.format("INSERT INTO %s(%s) VALUES (%s)", tableName, columnNames, placeHolders);
+
+        try (PreparedStatement preparedStatement = dataBaseSetUp.getConnection().prepareStatement(sqlCommand)) {
+
+            int index = 1;
+            for (Object value : entries.values()) {
+                preparedStatement.setObject(index++, value);
+            }
+            preparedStatement.executeUpdate();
+
+            return ("Successfully inserted record into " + tableName + "!");
+        } catch (SQLException e) {
+            System.err.println("Failed to insert record into " + tableName + ": " + e.getMessage());
+            return ("Failed to insert record into " + tableName + "! " + e.getMessage());
+        } finally {
+            dataBaseSetUp.stopConnection();
+        }
+    }
 }

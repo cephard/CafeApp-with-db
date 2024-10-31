@@ -5,15 +5,28 @@ public class MenuItem {
     private String description;
     private double price;
     private String category;
-    private String calories;
+    private int calories;
     private boolean isAvailable;
 
-    public MenuItem(String menuItemName,String description,double price,String category,String calories){
-         this.menuItemName = menuItemName;
+    public MenuItem(String menuItemName, String description, double price, String category, int calories) {
+        this.menuItemName = menuItemName;
         this.description = description;
-        this.price =price;
+        this.price = price;
         this.category = category;
         this.calories = calories;
+        isAvailable = true;
+    }
+
+    public MenuItem(String menuItemName, String description, String price, String category, String calories) {
+        this.menuItemName = menuItemName;
+        this.description = description;
+        this.price = setPrice(price);
+        this.category = category;
+        this.calories = setCalories(calories);
+        isAvailable = true;
+    }
+
+    public MenuItem() {
         isAvailable = true;
     }
 
@@ -41,6 +54,10 @@ public class MenuItem {
         this.price = price;
     }
 
+    public double setPrice(String price) {
+        return this.price = Double.parseDouble(price);
+    }
+
     public String getCategory() {
         return category;
     }
@@ -57,15 +74,30 @@ public class MenuItem {
         isAvailable = available;
     }
 
-    public String getCalories() {
+    public int getCalories() {
         return calories;
     }
 
-    public void setCalories(String calories) {
-        this.calories = calories;
+    public int setCalories(String calories) {
+        return this.calories = Integer.parseInt(calories);
     }
 
-    public void InsertMenuItem(){
+    public void InsertMenuItem() {
 
+    }
+
+
+    @Override
+    public String toString() {
+       // return String(menuItemName + " " + description + " " + price + " " + category + " " + calories + " " + isAvailable);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(menuItemName);
+        stringBuilder.append(description);
+        stringBuilder.append(price);
+        stringBuilder.append(category);
+        stringBuilder.append(calories);
+        stringBuilder.append(isAvailable);
+
+        return stringBuilder.toString();
     }
 }

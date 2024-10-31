@@ -12,14 +12,14 @@
    <children>
       <BorderPane prefHeight="240.0" prefWidth="426.0">
          <bottom>
-            <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER">
+            <Button mnemonicParsing="false" onAction="#updatePopUpMsg" text="Button" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="20.0" />
                </BorderPane.margin>
             </Button>
          </bottom>
          <center>
-            <Label fx:id="popUpText" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="354.0" text="Pop Up Text" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+            <Text id="popUpText" fx:id="popUpText" strokeType="OUTSIDE" strokeWidth="0.0" text="Pop up text" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </children>
