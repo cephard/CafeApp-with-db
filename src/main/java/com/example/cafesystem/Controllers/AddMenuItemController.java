@@ -3,6 +3,7 @@ package com.example.cafesystem.Controllers;
 import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Models.ImageHandler;
 import com.example.cafesystem.Models.MenuItem;
+import com.example.cafesystem.Models.SqlQueries;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -53,8 +54,9 @@ public class AddMenuItemController {
         menuItem.setCalories(itemCalories.getText());
         menuItem.setImageLocation(imageHandler.saveImg(selectedImage, itemName.getText()));
         menuItem.setAvailable(isAvailable.isSelected());
-
         menuItem.menuItemSet();
+        SqlQueries sqlQueries = new SqlQueries();
+        sqlQueries.insertNewRecord("MenuItems", menuItem.menuItemSet());
 
         System.out.println(menuItem.toString());
         System.out.println("All is good");

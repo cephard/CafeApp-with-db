@@ -128,17 +128,20 @@ public class SqlQueries {
             ")";
 
     // Alter table statements to add password column
-  //  public static String menuitemm = "ALTER TABLE MenuItems " +
-    //        "ADD COLUMN calories INTEGER NOT NULL";
-
-    public static String menuitem = "ALTER TABLE MenuItems " +
-            "DROP COLUMN imgLocation";
-
-    public void makeMneuitem(){
-        dataBaseSetUp.createConnection();
-        dataBaseSetUp.runSQLQuery(menuitem);
+    public void addColumn(String tableName, String column, String dataType) {
+        String addColumn = "ALTER TABLE " + tableName + " ADD COLUMN " + column + " " + dataType + " NOT NULL";
+        dataBaseSetUp.runSQLQuery(addColumn);
     }
 
+
+    public void dropColumn(String tableName, String column) {
+        String dropColumn = "ALTER TABLE " + tableName + " DROP COLUMN " + column;
+        dataBaseSetUp.runSQLQuery(dropColumn);
+    }
+
+    public void readRecord(String tableName, String rowIdentifier, String availableEntry){
+        String read = "Select * from " + tableName + " WHERE " + rowIdentifier + " IS " + availableEntry;
+    }
 
     public String insertNewRecord(String tableName, HashMap<String, Object> entries) {
         if (entries.isEmpty()) {
@@ -166,5 +169,7 @@ public class SqlQueries {
         } finally {
             dataBaseSetUp.stopConnection();
         }
+
+
     }
 }

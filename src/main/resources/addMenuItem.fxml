@@ -14,8 +14,8 @@
             <columnConstraints>
                 <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="25.0" prefWidth="50.0" />
-                <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="101.0" minWidth="25.0" prefWidth="101.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="117.0" minWidth="-Infinity" prefWidth="93.0" />
                 <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
@@ -33,75 +33,11 @@
                 <Label styleClass="menuItemDetail" text="Name " />
                 <TextField fx:id="itemPrice" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <TextField fx:id="itemName" GridPane.columnIndex="1" />
-                <Label styleClass="menuItemDetail" text="Category" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label styleClass="menuItemDetail" text="Category" GridPane.rowIndex="3" />
                 <Label styleClass="menuItemDetail" text="Description" GridPane.rowIndex="1" />
                 <Label styleClass="menuItemDetail" text="Available" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                 <Label styleClass="menuItemDetail" text="Price" GridPane.rowIndex="2" />
-                <Accordion GridPane.columnIndex="3" GridPane.rowIndex="3">
-                    <panes>
-                        <TitledPane animated="false" contentDisplay="CENTER" text="Category">
-                            <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0">
-                                    <children>
-                              <ScrollPane prefHeight="180.0" prefViewportHeight="180.0" prefViewportWidth="200.0">
-                                 <content>
-                                    <AnchorPane>
-                                       <children>
-                                                      <AnchorPane layoutY="39.0" minHeight="0.0" minWidth="0.0" prefHeight="36.0" styleClass="menuItemCategories">
-                                                          <children>
-                                                              <Label fx:id="breakfast" onMouseClicked="#getSelectedCategory" text="Breakfast">
-                                                                  <padding>
-                                                                      <Insets left="30.0" />
-                                                                  </padding>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane prefHeight="36.0" styleClass="menuItemCategories">
-                                                          <children>
-                                                              <Label fx:id="beverage" onMouseClicked="#getSelectedCategory" text="Beverage">
-                                                                  <padding>
-                                                                      <Insets left="30.0" />
-                                                                  </padding>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane layoutY="78.0" minHeight="0.0" minWidth="0.0" prefHeight="36.0" styleClass="menuItemCategories">
-                                                          <children>
-                                                              <Label fx:id="salad" onMouseClicked="#getSelectedCategory" text="Salad">
-                                                                  <padding>
-                                                                      <Insets left="30.0" />
-                                                                  </padding>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane layoutY="117.0" minHeight="0.0" minWidth="0.0" prefHeight="36.0" styleClass="menuItemCategories">
-                                                          <children>
-                                                              <Label fx:id="soup" onMouseClicked="#getSelectedCategory" text="Soup">
-                                                                  <padding>
-                                                                      <Insets left="30.0" />
-                                                                  </padding>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                                      <AnchorPane layoutY="156.0" prefHeight="36.0" styleClass="menuItemCategories">
-                                                          <children>
-                                                              <Label fx:id="dessert" onMouseClicked="#getSelectedCategory" text="Dessert">
-                                                                  <padding>
-                                                                      <Insets left="30.0" />
-                                                                  </padding>
-                                                              </Label>
-                                                          </children>
-                                                      </AnchorPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </ScrollPane>
-                                    </children>
-                                </AnchorPane>
-                            </content>
-                        </TitledPane>
-                    </panes>
-                </Accordion>
+                <Accordion GridPane.columnIndex="3" GridPane.rowIndex="3" />
                 <CheckBox fx:id="isAvailable" mnemonicParsing="false" selected="true" styleClass="menuItemDetail" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                 <Label styleClass="menuItemDetail" text="Upload Image" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                 <Label styleClass="menuItemDetail" text="Calories" GridPane.columnIndex="3" />
@@ -113,6 +49,67 @@
                       <Button mnemonicParsing="false" onMouseClicked="#selectImage" text="Upload" />
                </children>
             </VBox>
+                  <TitledPane animated="false" contentDisplay="CENTER" prefHeight="212.0" prefWidth="94.0" text="Category" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0">
+                              <children>
+                        <ScrollPane prefHeight="180.0" prefViewportHeight="180.0" prefViewportWidth="200.0">
+                           <content>
+                              <AnchorPane>
+                                 <children>
+                                                <AnchorPane layoutY="39.0" minHeight="0.0" minWidth="0.0" prefHeight="36.0" styleClass="menuItemCategories">
+                                                    <children>
+                                                        <Label fx:id="breakfast" onMouseClicked="#getSelectedCategory" text="Breakfast">
+                                                            <padding>
+                                                                <Insets left="30.0" />
+                                                            </padding>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="36.0" styleClass="menuItemCategories">
+                                                    <children>
+                                                        <Label fx:id="beverage" onMouseClicked="#getSelectedCategory" text="Beverage">
+                                                            <padding>
+                                                                <Insets left="30.0" />
+                                                            </padding>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutY="78.0" minHeight="0.0" minWidth="0.0" prefHeight="36.0" styleClass="menuItemCategories">
+                                                    <children>
+                                                        <Label fx:id="salad" onMouseClicked="#getSelectedCategory" text="Salad">
+                                                            <padding>
+                                                                <Insets left="30.0" />
+                                                            </padding>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutY="117.0" minHeight="0.0" minWidth="0.0" prefHeight="36.0" styleClass="menuItemCategories">
+                                                    <children>
+                                                        <Label fx:id="soup" onMouseClicked="#getSelectedCategory" text="Soup">
+                                                            <padding>
+                                                                <Insets left="30.0" />
+                                                            </padding>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutY="156.0" prefHeight="36.0" styleClass="menuItemCategories">
+                                                    <children>
+                                                        <Label fx:id="dessert" onMouseClicked="#getSelectedCategory" text="Dessert">
+                                                            <padding>
+                                                                <Insets left="30.0" />
+                                                            </padding>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                              </children>
+                          </AnchorPane>
+                      </content>
+                  </TitledPane>
             </children>
         </GridPane>
     </center>

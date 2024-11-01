@@ -107,7 +107,7 @@ public class MenuItem {
 
     public HashMap<String,Object>menuItemSet(){
         HashMap<String,Object> menuItem = new HashMap<String,Object>();
-        menuItem.put("menu_item_name",menuItemName);
+        menuItem.put("name",menuItemName);
         menuItem.put("price", price);
         menuItem.put("calories", calories);
         menuItem.put("category", category);
