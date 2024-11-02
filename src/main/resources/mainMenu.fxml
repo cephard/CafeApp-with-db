@@ -25,7 +25,7 @@
                    <Insets />
                </GridPane.margin>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Special Menu Deals">
+                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="main-menu-text" text="Special Menu Deals">
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>
@@ -40,7 +40,7 @@
                    <Insets />
                </GridPane.margin>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Take Away">
+                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="main-menu-text" text="Take Away">
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>
@@ -52,7 +52,7 @@
                     <Insets />
                 </GridPane.margin>
                 <children>
-                  <Label alignment="CENTER" styleClass="blueberry-text" text="Home Deliver">
+                  <Label alignment="CENTER" styleClass="main-menu-text" text="Home Deliver">
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>
@@ -67,7 +67,7 @@
                     <Insets />
                 </GridPane.margin>
                 <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Dine In Booking">
+                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="main-menu-text" text="Dine In Booking">
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>

@@ -56,7 +56,7 @@ public class LoginController extends UIController {
             while (resultSet.next()) {
                 customer = new Customer(resultSet.getString("first_name"), resultSet.getString("last_name"));
                 System.out.println(resultSet.getString("first_name") + " " + resultSet.getString("last_name"));
-                UIController.setRoot("/menu");
+                UIController.setRoot("/mainMenu");
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
