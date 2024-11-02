@@ -19,6 +19,14 @@ public class Customer {
     private Date dateOfBirth;
     private String password;
 
+    public Customer(){
+
+    }
+
+    public Customer(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
     public String getFirstName() {
         return firstName;
     }

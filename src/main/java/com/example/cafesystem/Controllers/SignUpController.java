@@ -37,7 +37,7 @@ public class SignUpController extends UIController {
         return emailField.getText();
     }
 
-    //check password if they match
+    //check the password if they match
     public String checkPassword(){
         if(!passwordField.getText().equals(confirmPasswordField.getText())){
             //do a pop-up to show the wrong password
@@ -74,6 +74,6 @@ public class SignUpController extends UIController {
 
         String msg = customer.getFirstName() + " successfully signed up!";
         PopUpController popUpController = new PopUpController();
-        popUpController.showPopup("Success", msg);
+        popUpController.showPopup();
     }
 }

@@ -8,7 +8,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.LoginController">
    <center>
-        <GridPane prefHeight="334.0" prefWidth="584.0" stylesheets="@menucss.css" BorderPane.alignment="CENTER">
+        <GridPane alignment="CENTER" prefHeight="334.0" prefWidth="584.0" stylesheets="@menucss.css" BorderPane.alignment="CENTER">
             <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="379.0" minWidth="10.0" prefWidth="200.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="379.0" minWidth="10.0" prefWidth="379.0" />
@@ -28,7 +28,7 @@
                                 <Font size="15.0" />
                             </font>
                   </Label>
-                        <TextField fx:id="UserNameField" promptText="Enter User Name">
+                        <TextField fx:id="userNameField" promptText="Enter User Name">
                             <font>
                                 <Font size="15.0" />
                             </font>
@@ -76,7 +76,7 @@
                         <HBox alignment="CENTER" prefHeight="28.0" prefWidth="314.0" spacing="20.0">
                             <children>
                                 <Button fx:id="backButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="66.0" text="Back" />
-                                <Button fx:id="resultButton" onMouseClicked="#retrieveUser" layoutX="84.0" layoutY="132.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="80.0" text="Login" />
+                                <Button fx:id="resultButton" layoutX="84.0" layoutY="132.0" mnemonicParsing="false" onMouseClicked="#retrieveUser" prefHeight="39.0" prefWidth="80.0" text="Login" />
                             </children>
                      <padding>
                         <Insets bottom="20.0" />

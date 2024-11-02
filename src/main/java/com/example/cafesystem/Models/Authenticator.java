@@ -12,7 +12,7 @@ public class Authenticator {
             // Hash the password and get the byte array
             byte[] hashedBytes = digest.digest(password.getBytes());
 
-            // Convert byte array to hexadecimal format
+            // Convert a byte array to hexadecimal format
             StringBuilder hexString = new StringBuilder();
             for (byte b : hashedBytes) {
                 String hex = Integer.toHexString(0xff & b);

@@ -139,10 +139,6 @@ public class SqlQueries {
         dataBaseSetUp.runSQLQuery(dropColumn);
     }
 
-    public void readRecord(String tableName, String rowIdentifier, String availableEntry){
-        String read = "Select * from " + tableName + " WHERE " + rowIdentifier + " IS " + availableEntry;
-    }
-
     public String insertNewRecord(String tableName, HashMap<String, Object> entries) {
         if (entries.isEmpty()) {
             throw new IllegalArgumentException("Entries cannot be empty.");
@@ -169,7 +165,5 @@ public class SqlQueries {
         } finally {
             dataBaseSetUp.stopConnection();
         }
-
-
     }
 }

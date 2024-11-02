@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.MenuController">
+    <center>
+        <GridPane alignment="CENTER" hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="-Infinity" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="-Infinity" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="70.0" minHeight="-Infinity" vgrow="SOMETIMES" />
+            </rowConstraints>
+           <children>
+            <StackPane fx:id="stackPane1" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover">
+               <GridPane.margin>
+                   <Insets />
+               </GridPane.margin>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Special Menu Deals">
+                     <StackPane.margin>
+                        <Insets top="7.5" />
+                     </StackPane.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stackPane2" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1">
+               <GridPane.margin>
+                   <Insets />
+               </GridPane.margin>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Take Away">
+                     <StackPane.margin>
+                        <Insets top="7.5" />
+                     </StackPane.margin>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stackPane5" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets />
+                </GridPane.margin>
+                <children>
+                  <Label alignment="CENTER" styleClass="blueberry-text" text="Home Deliver">
+                     <StackPane.margin>
+                        <Insets top="7.5" />
+                     </StackPane.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stackPane6" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets />
+                </GridPane.margin>
+                <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Dine In Booking">
+                     <StackPane.margin>
+                        <Insets top="7.5" />
+                     </StackPane.margin>
+                  </Label>
+               </children>
+            </StackPane>
+           </children>
+         <BorderPane.margin>
+            <Insets left="2.5" right="2.5" top="2.5" />
+         </BorderPane.margin>
+        </GridPane>
+    </center>
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+   <bottom>
+        <HBox alignment="BOTTOM_RIGHT" fillHeight="false" prefHeight="39.0" prefWidth="476.0" spacing="20.0" BorderPane.alignment="CENTER">
+           <children>
+               <Button fx:id="backButton" styleClass="main-button" text="Back" />
+               <Button fx:id="checkoutButton" styleClass="main-button" text="Cart" />
+           </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+        </HBox>
+   </bottom>
+   <top>
+      <StackPane prefHeight="37.0" prefWidth="833.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_RIGHT" spacing="20.0">
+               <children>
+                  <Label fx:id="customerName" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="17.0" prefWidth="189.0" text="Customer Name" textAlignment="CENTER" />
+                  <ImageView fitHeight="55.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../CAFE94_CW2/cafe94/src/main/resources/self/IMAGES/Quinoa_Salad.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" right="20.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </StackPane>
+   </top>
+</BorderPane>
