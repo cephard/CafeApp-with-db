@@ -4,6 +4,7 @@ import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Models.Authenticator;
 import com.example.cafesystem.Models.Customer;
 import com.example.cafesystem.Models.SqlQueries;
+import com.example.cafesystem.Models.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -25,10 +26,10 @@ public class LoginController extends UIController {
     @FXML
     private Button resultButton;
 
-    private static Customer customer;
+    private static User user;
 
-    public static Customer getCustomer() {
-        return customer;
+    public static User getCustomer() {
+        return user;
     }
 
     @FXML
@@ -54,7 +55,7 @@ public class LoginController extends UIController {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                customer = new Customer(resultSet.getString("first_name"), resultSet.getString("last_name"));
+                user = new User(resultSet.getString("first_name"), resultSet.getString("last_name"));
                 System.out.println(resultSet.getString("first_name") + " " + resultSet.getString("last_name"));
                 UIController.setRoot("/mainMenu");
             }

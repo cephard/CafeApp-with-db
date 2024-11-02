@@ -129,6 +129,7 @@ public class SqlQueries {
 
     // Alter table statements to add password column
     public void addColumn(String tableName, String column, String dataType) {
+        dataBaseSetUp.createConnection();
         String addColumn = "ALTER TABLE " + tableName + " ADD COLUMN " + column + " " + dataType + " NOT NULL";
         dataBaseSetUp.runSQLQuery(addColumn);
     }
@@ -137,6 +138,12 @@ public class SqlQueries {
     public void dropColumn(String tableName, String column) {
         String dropColumn = "ALTER TABLE " + tableName + " DROP COLUMN " + column;
         dataBaseSetUp.runSQLQuery(dropColumn);
+    }
+
+    public void readRecord(String tableName, String rowIdentifier, String availableEntry){
+        String read = "Select * from " + tableName + " WHERE " + rowIdentifier + " IS " + availableEntry;
+        dataBaseSetUp.createConnection();
+
     }
 
     public String insertNewRecord(String tableName, HashMap<String, Object> entries) {

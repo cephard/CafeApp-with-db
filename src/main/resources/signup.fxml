@@ -109,7 +109,7 @@
                   <HBox alignment="CENTER" prefHeight="80.0" prefWidth="372.0" spacing="20.0">
                      <children>
                         <Button fx:id="backButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="66.0" text="Back" />
-                        <Button fx:id="sigUpButton" layoutX="84.0" layoutY="132.0" mnemonicParsing="false" onAction="#createCustomer" prefHeight="39.0" prefWidth="96.0" text="Sign Up" />
+                        <Button fx:id="sigUpButton" layoutX="84.0" layoutY="132.0" mnemonicParsing="false" onAction="#createUser" prefHeight="39.0" prefWidth="96.0" text="Sign Up" />
                      </children>
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" />

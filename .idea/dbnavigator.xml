@@ -31,6 +31,7 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="2bbc3cb6-ba51-4f73-b957-15a687398e32" dataset="database.Events" active-filter-id="" />
+    <filter-actions connection-id="2bbc3cb6-ba51-4f73-b957-15a687398e32" dataset="database.Users" active-filter-id="" />
     <filter-actions connection-id="2bbc3cb6-ba51-4f73-b957-15a687398e32" dataset="database.Orders" active-filter-id="" />
     <filter-actions connection-id="2bbc3cb6-ba51-4f73-b957-15a687398e32" dataset="database.Customers" active-filter-id="" />
   </component>

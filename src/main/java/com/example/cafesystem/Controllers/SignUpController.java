@@ -2,8 +2,9 @@ package com.example.cafesystem.Controllers;
 
 import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Models.Authenticator;
-import com.example.cafesystem.Models.Customer;
+import com.example.cafesystem.Models.User;
 import com.example.cafesystem.Models.SqlQueries;
+import com.example.cafesystem.Models.User;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -22,10 +23,7 @@ public class SignUpController extends UIController {
     public TextField addressField;
     public PasswordField confirmPasswordField;
 
-    DataBaseSetUp dataBaseSetUp;
-    Customer customer = new Customer();
-    PopUpController popUpController;
-
+    User user = new User();
 
     public void switchToLogIn() throws IOException {
     UIController.setRoot("/login");
@@ -52,27 +50,27 @@ public class SignUpController extends UIController {
         return Long.parseLong(phoneNumberField.getText());
     }
 
-    public void createCustomer() throws IOException {
+    public void createUser() throws IOException {
         Stage stage = new Stage();
-        customer.setFirstName(firstNameField.getText());
-        customer.setLastName(lastNameField.getText());
-        customer.setEmail(checkEmail());
-        customer.setDateOfBirth(dataOfBirthField);
-        customer.setPhoneNumber(checkPhoneNumber());
-        customer.setAddress(addressField.getText());
-        customer.setPassword(checkPassword());
+        user.setFirstName(firstNameField.getText());
+        user.setLastName(lastNameField.getText());
+        user.setEmail(checkEmail());
+        user.setDateOfBirth(dataOfBirthField);
+        user.setPhoneNumber(checkPhoneNumber());
+        user.setAddress(addressField.getText());
+        user.setPassword(checkPassword());
 
-        System.out.println(customer.toString());
-        insertCustomer(customer.customerSet());
+        System.out.println(user.toString());
+        insertUser(user.userSet());
       //  popUpController.showPopup("popup", "/popup", "Account successfully created");
     }
 
-    // Insert method to save customer data
-    public void insertCustomer(HashMap<String, Object> customerSet) throws IOException {
+    // Insert method to save user data
+    public void insertUser(HashMap<String, Object> userSet) throws IOException {
         SqlQueries sqlQueries = new SqlQueries();
-        sqlQueries.insertNewRecord("Customers", customerSet);
+        sqlQueries.insertNewRecord("Users", userSet);
 
-        String msg = customer.getFirstName() + " successfully signed up!";
+        String msg = user.getFirstName() + " successfully signed up!";
         PopUpController popUpController = new PopUpController();
         popUpController.showPopup();
     }
