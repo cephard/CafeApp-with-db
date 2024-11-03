@@ -2,8 +2,6 @@ package com.example.cafesystem.Controllers;
 
 import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Models.Authenticator;
-import com.example.cafesystem.Models.Customer;
-import com.example.cafesystem.Models.SqlQueries;
 import com.example.cafesystem.Models.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -21,14 +19,9 @@ public class LoginController extends UIController {
     private TextField userNameField;
     @FXML
     private PasswordField passwordField;
-    @FXML
-    private Button backButton;
-    @FXML
-    private Button resultButton;
-
     private static User user;
 
-    public static User getCustomer() {
+    public static User getUser() {
         return user;
     }
 
@@ -46,7 +39,7 @@ public class LoginController extends UIController {
         DataBaseSetUp dataBaseSetUp = new DataBaseSetUp();
         dataBaseSetUp.createConnection();
 
-        String readUser = "Select * from Customers WHERE first_name = ? AND password = ?";
+        String readUser = "Select * from Users WHERE first_name = ? AND password = ?";
 
         try {
             PreparedStatement preparedStatement = dataBaseSetUp.getConnection().prepareStatement(readUser);
@@ -57,6 +50,8 @@ public class LoginController extends UIController {
             while (resultSet.next()) {
                 user = new User(resultSet.getString("first_name"), resultSet.getString("last_name"));
                 System.out.println(resultSet.getString("first_name") + " " + resultSet.getString("last_name"));
+                PopUpController popUpController = new PopUpController();
+                popUpController.showPopup("Success", "Welcome " + user.getFirstName());
                 UIController.setRoot("/mainMenu");
             }
         } catch (SQLException e) {

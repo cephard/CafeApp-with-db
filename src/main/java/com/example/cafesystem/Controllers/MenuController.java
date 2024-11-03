@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MenuController extends UIController {
-    User user = LoginController.getCustomer();
+    User user = LoginController.getUser();
 
     @FXML
     private Label customerName;
