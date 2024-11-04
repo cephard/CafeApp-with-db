@@ -32,7 +32,14 @@ public class SignUpController extends UIController {
 
     //check if email is valid before saving
     public String checkEmail() {
+        String email= "^[\\w-\\.]+@[\\w-\\.]+\\.[a-zA-Z]{2,}$";
+        String userEmail = emailField.getText();
+        String invalidMail = "Input a valid email";
 
+        if(!userEmail.matches(email)){
+            popUpController.showPopup("Email error", invalidMail);
+            throw new IllegalArgumentException(invalidMail);
+        }
         return emailField.getText();
     }
 
@@ -41,12 +48,12 @@ public class SignUpController extends UIController {
         String passwordMismatch = "Password mismatch";
         if (passwordField.getText().length() < 8) {
             String passwordShort = "Password must be at least 8 characters long";
-            popUpController.showPopup("Error", passwordShort);
-            throw new RuntimeException(passwordShort);
+            popUpController.showPopup("Password Error", passwordShort);
+            throw new IllegalArgumentException(passwordShort);
         } else if (!passwordField.getText().equals(confirmPasswordField.getText())) {
             //do a pop-up to show the wrong password
-            popUpController.showPopup("Error", passwordMismatch);
-            throw new RuntimeException(passwordMismatch);
+            popUpController.showPopup("Password Error", passwordMismatch);
+            throw new IllegalArgumentException(passwordMismatch);
         } else {
             return Authenticator.harshPassword(passwordField.getText());
         }
@@ -54,10 +61,14 @@ public class SignUpController extends UIController {
 
     public Long checkPhoneNumber() {
         String phoneNUmber = phoneNumberField.getText();
+        String nullPhoneNumber ="Phone number cannot be null";
+        String invalidPhoneNumber = "Please enter a valid phone number";
         if (phoneNUmber == null) {
-            popUpController.showPopup("Title", "Phone number cannot be null");
-        } else if (phoneNUmber.matches("\\d+")) {
-            popUpController.showPopup("Erro", "Please enter a valid phone number");
+            popUpController.showPopup("Title", nullPhoneNumber);
+            throw new IllegalArgumentException(nullPhoneNumber);
+        } else if (!phoneNUmber.matches("\\d+")) {
+            popUpController.showPopup("Phone number Error", invalidPhoneNumber);
+            throw new IllegalArgumentException(invalidPhoneNumber);
         }
         return Long.parseLong(phoneNumberField.getText());
     }
@@ -80,7 +91,5 @@ public class SignUpController extends UIController {
     public void insertUser(HashMap<String, Object> userSet) throws IOException {
         SqlQueries sqlQueries = new SqlQueries();
         sqlQueries.insertNewRecord("Users", userSet);
-
-        String msg = user.getFirstName() + "";
     }
 }

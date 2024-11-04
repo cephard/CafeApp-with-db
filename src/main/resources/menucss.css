@@ -323,13 +323,9 @@ list-view .cell {
 
 }
 
-.menuItemCategories {
-    -fx-border-color: transparent transparent #cccccc transparent;
-    -fx-border-width: 0 0 1px 0;
-}
 
 .menuItemCategories:hover {
- -fx-font-size: 1.1em;
+ -fx-font-size: 1.5em;
     -fx-font-weight: bold;
        -fx-text-fill: #FF7F50;
 }

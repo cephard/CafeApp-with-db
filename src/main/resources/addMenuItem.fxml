@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
@@ -13,16 +14,16 @@
         <GridPane alignment="CENTER" hgap="10.0" maxWidth="600.0" vgap="10.0" BorderPane.alignment="CENTER">
             <columnConstraints>
                 <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
-            <ColumnConstraints hgrow="ALWAYS" maxWidth="101.0" minWidth="25.0" prefWidth="101.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="143.0" minWidth="-Infinity" prefWidth="143.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="117.0" minWidth="10.0" prefWidth="20.0" />
                 <ColumnConstraints hgrow="ALWAYS" maxWidth="117.0" minWidth="-Infinity" prefWidth="93.0" />
                 <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints vgrow="ALWAYS" />
                 <RowConstraints vgrow="ALWAYS" />
-                <RowConstraints vgrow="ALWAYS" />
-                <RowConstraints valignment="TOP" vgrow="ALWAYS" />
+                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="200.0" prefHeight="200.0" valignment="TOP" vgrow="ALWAYS" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
                 <RowConstraints maxHeight="70.0" minHeight="-Infinity" vgrow="SOMETIMES" />
             </rowConstraints>
@@ -31,29 +32,31 @@
             </BorderPane.margin>
             <children>
                 <Label styleClass="menuItemDetail" text="Name " />
-                <TextField fx:id="itemPrice" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="itemPrice" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <TextField fx:id="itemName" GridPane.columnIndex="1" />
                 <Label styleClass="menuItemDetail" text="Category" GridPane.rowIndex="3" />
-                <Label styleClass="menuItemDetail" text="Description" GridPane.rowIndex="1" />
-                <Label styleClass="menuItemDetail" text="Available" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                <Label styleClass="menuItemDetail" text="Price" GridPane.rowIndex="2" />
-                <Accordion GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                <CheckBox fx:id="isAvailable" mnemonicParsing="false" selected="true" styleClass="menuItemDetail" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                <Label styleClass="menuItemDetail" text="Upload Image" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Label styleClass="menuItemDetail" text="Description" GridPane.rowIndex="2" />
+                <Label styleClass="menuItemDetail" text="Available" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Label styleClass="menuItemDetail" text="Price" GridPane.rowIndex="1" />
+                <CheckBox fx:id="isAvailable" mnemonicParsing="false" selected="true" styleClass="menuItemDetail" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" styleClass="menuItemDetail" text="Upload Image" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                 <Label styleClass="menuItemDetail" text="Calories" GridPane.columnIndex="3" />
                 <TextField fx:id="itemCalories" GridPane.columnIndex="4" />
-                <TextArea fx:id="itemDescription" prefHeight="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                <TextArea fx:id="itemDescription" prefHeight="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <VBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
                <children>
-                  <ImageView fx:id="itemImage" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="itemImage" fitHeight="95.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" styleClass="itemImage">
+                     <image>
+                        <Image url="@../../../../../Documents/GitHub/cephrad-portfolio-website/images/75-750439_nature-desktop-backgrounds.jpg" />
+                     </image></ImageView>
                       <Button mnemonicParsing="false" onMouseClicked="#selectImage" text="Upload" />
                </children>
             </VBox>
-                  <TitledPane animated="false" contentDisplay="CENTER" prefHeight="212.0" prefWidth="94.0" text="Category" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <TitledPane animated="false" contentDisplay="CENTER" prefHeight="212.0" prefWidth="102.0" text="Category" GridPane.columnIndex="1" GridPane.rowIndex="3">
                       <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0">
                               <children>
-                        <ScrollPane prefHeight="180.0" prefViewportHeight="180.0" prefViewportWidth="200.0">
+                        <ScrollPane prefHeight="180.0" prefViewportHeight="180.0" prefViewportWidth="200.0" prefWidth="128.0">
                            <content>
                               <AnchorPane>
                                  <children>
@@ -109,6 +112,9 @@
                               </children>
                           </AnchorPane>
                       </content>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
                   </TitledPane>
             </children>
         </GridPane>
