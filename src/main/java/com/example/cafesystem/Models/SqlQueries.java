@@ -140,13 +140,14 @@ public class SqlQueries {
         dataBaseSetUp.runSQLQuery(dropColumn);
     }
 
-    public void readRecord(String tableName, String rowIdentifier, String availableEntry){
+    public void readRecord(String tableName, String rowIdentifier, String availableEntry) {
         String read = "Select * from " + tableName + " WHERE " + rowIdentifier + " IS " + availableEntry;
         dataBaseSetUp.createConnection();
 
     }
 
-    public String insertNewRecord(String tableName, HashMap<String, Object> entries) {
+
+    public void insertNewRecord(String tableName, HashMap<String, Object> entries) {
         if (entries.isEmpty()) {
             throw new IllegalArgumentException("Entries cannot be empty.");
         }
@@ -164,13 +165,34 @@ public class SqlQueries {
                 preparedStatement.setObject(index++, value);
             }
             preparedStatement.executeUpdate();
+            preparedStatement.close();
 
-            return ("Successfully inserted record into " + tableName + "!");
+            System.out.println("Successfully inserted record into " + tableName + "!");
         } catch (SQLException e) {
             System.err.println("Failed to insert record into " + tableName + ": " + e.getMessage());
-            return ("Failed to insert record into " + tableName + "! " + e.getMessage());
+
         } finally {
             dataBaseSetUp.stopConnection();
+        }
+    }
+
+    public void deleteRecord(String tableName, Object recordID) throws SQLException {
+        dataBaseSetUp.createConnection();
+        String sqlCode = "Delete from " + tableName + " WHERE menu_item_id = ?";
+
+
+        try( PreparedStatement preparedStatement = dataBaseSetUp.getConnection().prepareStatement(sqlCode)) {
+
+            preparedStatement.setObject(1, recordID);
+            preparedStatement.executeUpdate();
+            System.out.println("Yey ");
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+
+                dataBaseSetUp.stopConnection();
         }
     }
 }

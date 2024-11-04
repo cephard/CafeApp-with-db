@@ -14,8 +14,8 @@ public class Main extends Application {
     DataBaseSetUp dataBaseSetUp = new DataBaseSetUp();
 
     @Override
-    public void start(Stage stage) throws IOException {
-        UIController.loadNewStage(stage,"/signup");
+    public void start(Stage stage) throws IOException, SQLException {
+        UIController.loadNewStage(stage, "/signup");
     }
 
     public static void main(String[] args) {

@@ -20,10 +20,10 @@ import java.nio.file.Paths;
 public class AddMenuItemController {
     private final ImageHandler imageHandler = new ImageHandler();
     private File selectedImage;
-    @FXML public TextField itemCalories;
-    @FXML public TextArea itemDescription;
-    @FXML public ImageView itemImage;
-    @FXML public CheckBox isAvailable;
+    @FXML private TextField itemCalories;
+    @FXML private TextArea itemDescription;
+    @FXML private ImageView itemImage;
+    @FXML private CheckBox isAvailable;
     @FXML private TextField itemName;
     @FXML private TextField itemPrice;
 
@@ -32,7 +32,14 @@ public class AddMenuItemController {
     private String selectedCategory;
 
     MenuItem menuItem = new MenuItem();
+    private PopUpController popUpController = new PopUpController();
 
+    private void checkNullValues(Object value, String valueName) {
+        if (value == null) {
+            popUpController.showPopup(valueName + " Error", valueName + " cannot be null");
+            throw new IllegalArgumentException("Price cannot be null");
+        }
+    }
 
     public void getSelectedCategory(javafx.scene.input.MouseEvent mouseEvent) {
         Label selectedLabel = (Label) mouseEvent.getSource();
@@ -41,24 +48,60 @@ public class AddMenuItemController {
         System.out.println("Selected Category: " + category);
     }
 
-    public void selectImage(){
+    public String checkCategory(){
+        checkNullValues(selectedCategory, "Category");
+        return selectedCategory;
+    }
+
+    public void selectImage() {
         selectedImage = imageHandler.loadImage();
         imageHandler.regenerateImage(selectedImage, itemImage);
     }
 
-    public void addMenuItem() {
-        menuItem.setMenuItemName(itemName.getText());
-        menuItem.setDescription(itemDescription.getText());
-        menuItem.setPrice(itemPrice.getText());
-        menuItem.setCategory(selectedCategory);
-        menuItem.setCalories(itemCalories.getText());
-        menuItem.setImageLocation(imageHandler.saveImg(selectedImage, itemName.getText()));
-        menuItem.setAvailable(isAvailable.isSelected());
-        menuItem.menuItemSet();
-        SqlQueries sqlQueries = new SqlQueries();
-        sqlQueries.insertNewRecord("MenuItems", menuItem.menuItemSet());
-
-        System.out.println(menuItem.toString());
-        System.out.println("All is good");
+    private String checkName() {
+        String name = itemName.getText();
+        checkNullValues(name,"Name");
+        return name;
     }
-}
+
+    private String checkDescription() {
+        String description = itemDescription.getText();
+        checkNullValues(description, "Description");
+        return description;
+    }
+
+    private double checkPrice() {
+        String priceText = itemPrice.getText();
+        checkNullValues(priceText, "Price");
+
+        if (!priceText.matches("-?\\d+(\\.\\d+)?")) {
+            popUpController.showPopup("Price Error", "Failed: Enter correct price format");
+            throw new IllegalArgumentException("price must be a double");
+        }
+        return menuItem.setPrice(priceText);
+    }
+
+    private int checkCalories(){
+        String calories = itemCalories.getText();
+        checkNullValues(calories, "Calories");
+        return Integer.parseInt(calories);
+    }
+
+        public void addMenuItem () {
+            checkNullValues(selectedImage, "Image");
+            menuItem.setMenuItemName(checkName());
+            menuItem.setDescription(checkDescription());
+            menuItem.setPrice(checkPrice());
+            menuItem.setCategory(checkCategory());
+            menuItem.setCalories(checkCalories());
+            menuItem.setImageLocation(imageHandler.saveImg(selectedImage, itemName.getText()));
+            menuItem.setAvailable(isAvailable.isSelected());
+            menuItem.menuItemSet();
+
+            SqlQueries sqlQueries = new SqlQueries();
+            sqlQueries.insertNewRecord("MenuItems", menuItem.menuItemSet());
+
+            popUpController.showPopup("Success", menuItem.getMenuItemName() + " successfully added!");
+
+        }
+    }

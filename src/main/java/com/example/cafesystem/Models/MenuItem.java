@@ -20,12 +20,12 @@ public class MenuItem {
         isAvailable = true;
     }
 
-    public MenuItem(String menuItemName, String description, String price, String category, String calories) {
+    public MenuItem(String menuItemName, String description, int price, String category, int calories) {
         this.menuItemName = menuItemName;
         this.description = description;
-        this.price = setPrice(price);
+        this.price = price;
         this.category = category;
-        this.calories = setCalories(calories);
+        this.calories = calories;
         isAvailable = true;
     }
 
@@ -81,8 +81,8 @@ public class MenuItem {
         return calories;
     }
 
-    public int setCalories(String calories) {
-        return this.calories = Integer.parseInt(calories);
+    public int setCalories(int calories) {
+        return this.calories = calories;
     }
 
     public void InsertMenuItem() {

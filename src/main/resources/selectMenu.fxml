@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -12,18 +13,15 @@
             <columnConstraints>
                 <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
                 <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
-                <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="-Infinity" prefHeight="100.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="-Infinity" prefHeight="100.0" vgrow="ALWAYS" />
-                <RowConstraints minHeight="-Infinity" prefHeight="100.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="-Infinity" prefHeight="100.0" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints minHeight="-Infinity" prefHeight="100.0" valignment="CENTER" vgrow="ALWAYS" />
+                <RowConstraints minHeight="-Infinity" prefHeight="100.0" valignment="CENTER" vgrow="ALWAYS" />
             <RowConstraints maxHeight="70.0" minHeight="-Infinity" vgrow="SOMETIMES" />
             </rowConstraints>
            <children>
-            <StackPane prefHeight="526.0" prefWidth="128.0" styleClass="stack-pane-hover" />
-            <StackPane fx:id="stackPane1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover">
+            <StackPane fx:id="stackPane1" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover">
                <GridPane.margin>
                    <Insets />
                </GridPane.margin>
@@ -32,10 +30,13 @@
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
                   </Label>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane2" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1">
+            <StackPane fx:id="stackPane2" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1">
                <GridPane.margin>
                    <Insets />
                </GridPane.margin>
@@ -44,34 +45,13 @@
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
                   </Label>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="2">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Caprese      Salad £7.99">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane4" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="3">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Grilled Sandwich  £4.93">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane5" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="1">
+            <StackPane fx:id="stackPane5" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="1">
                 <GridPane.margin>
                     <Insets />
                 </GridPane.margin>
@@ -80,10 +60,13 @@
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
                   </Label>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane6" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <StackPane fx:id="stackPane6" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="1">
                 <GridPane.margin>
                     <Insets />
                 </GridPane.margin>
@@ -92,34 +75,13 @@
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
                   </Label>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane7" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Veggie Wrap          £6.99">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane8" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Broth Bowl   £7.99">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane9" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="2">
+            <StackPane fx:id="stackPane9" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="2">
                 <GridPane.margin>
                     <Insets />
                 </GridPane.margin>
@@ -128,10 +90,13 @@
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
                   </Label>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane10" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <StackPane fx:id="stackPane10" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="2">
                 <GridPane.margin>
                     <Insets />
                 </GridPane.margin>
@@ -140,32 +105,11 @@
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
                   </Label>
                </children>
-            </StackPane>
-            <StackPane fx:id="stackPane11" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Fruit Smoothie  £5.99">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane12" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="3" GridPane.rowIndex="2">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Club Sandwich   £8.49">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin>
             </StackPane>
            </children>
          <BorderPane.margin>
