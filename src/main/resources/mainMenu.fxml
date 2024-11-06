@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.MenuController">
+<BorderPane stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.MainMenuController">
     <center>
         <GridPane alignment="CENTER" hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
             <columnConstraints>
@@ -20,7 +20,7 @@
             <RowConstraints maxHeight="70.0" minHeight="-Infinity" vgrow="SOMETIMES" />
             </rowConstraints>
            <children>
-            <StackPane fx:id="stackPane1" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover">
+            <StackPane fx:id="stackPane1" onMouseClicked="#openSpecialMenu"  layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover">
                <GridPane.margin>
                    <Insets />
                </GridPane.margin>
@@ -35,7 +35,7 @@
                   </Label>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane2" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1">
+            <StackPane fx:id="stackPane2" onMouseClicked="#openMenu"  layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1">
                <GridPane.margin>
                    <Insets />
                </GridPane.margin>
@@ -47,7 +47,7 @@
                   </Label>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane5" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="1">
+            <StackPane fx:id="stackPane3" onMouseClicked="#openMenu"  layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="1">
                 <GridPane.margin>
                     <Insets />
                 </GridPane.margin>
@@ -62,7 +62,7 @@
                   </Label>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane6" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <StackPane fx:id="stackPane4" onMouseClicked="#openMenu"  layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="1">
                 <GridPane.margin>
                     <Insets />
                 </GridPane.margin>

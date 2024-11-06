@@ -244,6 +244,17 @@
     -fx-wrap-text: true;
 }
 
+.selectmenu-text{
+    -fx-font-size: 1.25em;
+        -fx-font-family: "Arial", sans-serif;
+        -fx-fill: #333;
+        -fx-stroke-type: outside;
+        -fx-font-weight: bold;
+        -fx-stroke-width: 0.0;
+        -fx-text-alignment: center;
+        -fx-wrap-text: true;
+}
+
 .menuitem-text {
     -fx-font-family: "Arial", sans-serif;
     -fx-font-size: 1.5em;
@@ -333,3 +344,4 @@ list-view .cell {
 .main-menu-text{
 -fx-font-size:2.0em;
 }
+

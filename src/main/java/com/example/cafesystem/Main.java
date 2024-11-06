@@ -15,7 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException, SQLException {
-        UIController.loadNewStage(stage, "/signup");
+        UIController.loadNewStage(stage, "/login");
     }
 
     public static void main(String[] args) {

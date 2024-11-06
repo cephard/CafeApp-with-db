@@ -1,9 +1,7 @@
 package com.example.cafesystem.Controllers;
 
-import com.example.cafesystem.Models.Customer;
 import com.example.cafesystem.Models.User;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 import java.net.URL;
