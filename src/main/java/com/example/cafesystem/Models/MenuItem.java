@@ -19,14 +19,15 @@ public class MenuItem {
         this.calories = calories;
         isAvailable = true;
     }
-
-    public MenuItem(String menuItemName, String description, int price, String category, int calories) {
+//                                  1, 2,3,4,    6,5,7
+    public MenuItem(String menuItemName, String description, int price, String category,  boolean isAvailable, int calories, String imageLocation) {
         this.menuItemName = menuItemName;
         this.description = description;
         this.price = price;
         this.category = category;
         this.calories = calories;
-        isAvailable = true;
+        this.isAvailable = isAvailable;
+        this.imageLocation = imageLocation;
     }
 
     public MenuItem() {

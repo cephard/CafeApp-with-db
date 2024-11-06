@@ -2,7 +2,6 @@ package com.example.cafesystem;
 
 import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Controllers.UIController;
-import com.example.cafesystem.Models.SqlQueries;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
