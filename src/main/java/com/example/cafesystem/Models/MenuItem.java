@@ -10,6 +10,8 @@ public class MenuItem {
     private int calories;
     private boolean isAvailable;
     private String imageLocation;
+    
+
 
     public MenuItem(String menuItemName, String description, double price, String category, int calories) {
         this.menuItemName = menuItemName;
@@ -89,6 +91,11 @@ public class MenuItem {
     public void InsertMenuItem() {
 
     }
+
+    public String getImageLocation() {
+        return imageLocation;
+    }
+
 
 
     @Override

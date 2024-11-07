@@ -23,156 +23,287 @@
             <RowConstraints maxHeight="70.0" minHeight="-Infinity" vgrow="SOMETIMES" />
             </rowConstraints>
            <children>
-            <StackPane prefHeight="526.0" prefWidth="128.0" styleClass="stack-pane-hover" />
             <StackPane fx:id="stackPane1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover">
                <GridPane.margin>
                    <Insets />
                </GridPane.margin>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Croissant         £2.10">
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name1" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price1" contentDisplay="CENTER" styleClass="blueberry-text" text="price">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories1" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <StackPane.margin>
-                        <Insets top="7.5" />
+                        <Insets bottom="3.0" left="3.0" />
                      </StackPane.margin>
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Label>
+                  </VBox>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane2" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1">
-               <GridPane.margin>
-                   <Insets />
-               </GridPane.margin>
+            <StackPane fx:id="stackPane2" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Avocado Toast    £5.75">
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name2" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price2" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories2" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <StackPane.margin>
-                        <Insets top="7.5" />
+                        <Insets bottom="3.0" left="3.0" />
                      </StackPane.margin>
-                  </Label>
+                  </VBox>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane3" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="2">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
+            <StackPane fx:id="stackPane3" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="2">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Caprese Salad £7.99">
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name3" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price3" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories3" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <StackPane.margin>
-                        <Insets top="7.5" />
+                        <Insets bottom="3.0" left="3.0" />
                      </StackPane.margin>
-                  </Label>
+                  </VBox>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane4" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="3">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Grilled Sandwich  £4.93">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane5" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="1">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" styleClass="blueberry-text" text="Blueberry Muffin   £2.99">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane6" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Quinoa Salad        £7.19">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane7" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Veggie Wrap          £6.99">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane8" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Broth Bowl   £7.99">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane9" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="2">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Chai          £3.99">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane10" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Cream Bagel   £3.49">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane11" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                <GridPane.margin>
-                    <Insets />
-                </GridPane.margin>
-                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Fruit Smoothie  £5.99">
-                     <StackPane.margin>
-                        <Insets top="7.5" />
-                     </StackPane.margin>
-                  </Label>
-               </children>
-            </StackPane>
-            <StackPane fx:id="stackPane12" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <StackPane fx:id="stackPane4" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="3">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Club Sandwich   £8.49">
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name4" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price4" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories4" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
                      <StackPane.margin>
-                        <Insets top="7.5" />
+                        <Insets bottom="3.0" left="3.0" />
                      </StackPane.margin>
-                  </Label>
+                  </VBox>
                </children>
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin>
+            </StackPane>
+            <StackPane fx:id="stackPane5" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="1">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name5" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price5" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories5" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="3.0" left="3.0" />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stackPane6" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name6" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price6" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories6" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="3.0" left="3.0" />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stackPane7" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name7" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price7" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories7" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="3.0" left="3.0" />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stackPane8" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name8" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price8" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories8" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="3.0" left="3.0" />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stackPane9" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.rowIndex="2">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name9" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price9" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories9" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="3.0" left="3.0" />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stackPane10" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name10" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price10" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories10" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="3.0" left="3.0" />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stackPane11" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name11" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price11" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories11" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="3.0" left="3.0" />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+            </StackPane>
+            <StackPane fx:id="stackPane12" alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="name12" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="Name">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="price12" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" fx:id="calories12" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="3.0" left="3.0" />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
             </StackPane>
            </children>
          <BorderPane.margin>

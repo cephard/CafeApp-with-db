@@ -40,4 +40,8 @@ public class Menu {
     public ArrayList<MenuItem> getMenu(){
        return menuItems;
     }
+
+    public int getMenuSize(){
+        return menuItems.size();
+    }
 }
