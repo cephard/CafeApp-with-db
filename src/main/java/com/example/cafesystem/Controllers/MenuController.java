@@ -164,9 +164,10 @@ public class MenuController extends UIController {
         Label selectedLabel = (Label) mouseEvent.getSource();
         String category = selectedLabel.getText();
 
-        int index = 0;
 
+        int index = 0;
         for (MenuItem menuItem : menu.getMenu()) {
+
             if (menuItem.getCategory().equals(category) && !currentCategory.equals(category)) {
                 System.out.println(menuItem);
 
@@ -184,9 +185,9 @@ public class MenuController extends UIController {
                 nameLabels.get(index).setText(menuItem.getMenuItemName());
                 priceLabels.get(index).setText("£ " + String.valueOf(menuItem.getPrice()));
                 caloriesLabels.get(index).setText(String.valueOf(menuItem.getCalories()) + " kcal");
-
+                index++;
             }
-            index++;
+
         }
         currentCategory = category;
     }
