@@ -111,8 +111,7 @@
  }
 
 
-#stackPane1 {/*
-    -fx-background-image: url('IMAGES/crossiant.png');/* */
+#stackPane1 {
     -fx-background-size: cover;
     -fx-background-repeat: no-repeat;
     -fx-background-color: #FFE4C4; /* Bisque */

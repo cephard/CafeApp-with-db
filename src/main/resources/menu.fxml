@@ -35,12 +35,12 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price1" contentDisplay="CENTER" styleClass="blueberry-text" text="price">
+                        <Label fx:id="price1" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories1" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">
+                        <Label fx:id="calories1" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -60,11 +60,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price2" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price2" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories2" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories2" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -83,11 +83,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price3" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price3" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories3" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories3" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -106,11 +106,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price4" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price4" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories4" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories4" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -129,11 +129,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price5" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price5" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories5" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories5" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -152,11 +152,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price6" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price6" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories6" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories6" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -175,11 +175,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price7" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price7" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories7" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories7" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -198,11 +198,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price8" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price8" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories8" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories8" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -221,11 +221,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price9" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price9" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories9" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories9" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -244,11 +244,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price10" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price10" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories10" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories10" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -267,11 +267,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price11" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price11" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories11" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories11" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -290,11 +290,11 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="price12" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
+                        <Label fx:id="price12" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="price">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" fx:id="calories12" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
+                        <Label fx:id="calories12" alignment="CENTER" contentDisplay="CENTER" styleClass="blueberry-text" text="calories">                           <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
@@ -351,7 +351,7 @@
                <padding>
                   <Insets bottom="20.0" left="10.0" right="10.0" top="15.0" />
                </padding></Label>
-            <Label onMouseClicked="#selectMenuCategory" text="Main Dish" textAlignment="CENTER">
+            <Label onMouseClicked="#selectMenuCategory" text="Soup" textAlignment="CENTER">
                <padding>
                   <Insets bottom="20.0" top="15.0" />
                </padding></Label>

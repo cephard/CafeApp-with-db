@@ -168,9 +168,17 @@ public class MenuController extends UIController {
             if (menuItem.getCategory().equals(category) && !currentCategory.equals(category)) {
                 System.out.println(menuItem);
 
+
+                String imageLocation = "/Images/"+menuItem.getImageLocation();
+                URL imageUrl = getClass().getResource(imageLocation);
+                if (imageUrl != null) {
+                    String imagePath = imageUrl.toExternalForm();
+                    stackPanes.get(index).setStyle("-fx-background-image: url('" + imagePath + "');");
+                } else {
+                    System.out.println("Resource not found.");
+                }
+
                 stackPanes.get(index).setVisible(true);
-                String imagePath = "C:\\Users\\cepha\\IdeaProjects\\CafeSystem\\src\\main\\resources\\Images\\Mocha_Latte.png";
-                stackPanes.get(index).setStyle("-fx-background-image: url('" + imagePath + "');");
                 nameLabels.get(index).setText(menuItem.getMenuItemName());
                 priceLabels.get(index).setText("£ " + String.valueOf(menuItem.getPrice()));
                 caloriesLabels.get(index).setText(String.valueOf(menuItem.getCalories()) + " kcal");
