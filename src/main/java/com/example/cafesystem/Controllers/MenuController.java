@@ -43,77 +43,79 @@ public class MenuController extends UIController {
     @FXML
     private Label name1;
     @FXML
-    private Label nameLabel2;
+    private Label name2;
     @FXML
-    private Label nameLabel3;
+    private Label name3;
     @FXML
-    private Label nameLabel4;
+    private Label name4;
     @FXML
-    private Label nameLabel5;
+    private Label name5;
     @FXML
-    private Label nameLabel6;
+    private Label name6;
     @FXML
-    private Label nameLabel7;
+    private Label name7;
     @FXML
-    private Label nameLabel8;
+    private Label name8;
     @FXML
-    private Label nameLabel9;
+    private Label name9;
     @FXML
-    private Label nameLabel10;
+    private Label name10;
     @FXML
-    private Label nameLabel11;
+    private Label name11;
     @FXML
-    private Label nameLabel12;
+    private Label name12;
 
     @FXML
     private Label price1;
     @FXML
-    private Label priceLabel2;
+    private Label price2;
     @FXML
-    private Label priceLabel3;
+    private Label price3;
     @FXML
-    private Label priceLabel4;
+    private Label price4;
     @FXML
-    private Label priceLabel5;
+    private Label price5;
     @FXML
-    private Label priceLabel6;
+    private Label price6;
     @FXML
-    private Label priceLabel7;
+    private Label price7;
     @FXML
-    private Label priceLabel8;
+    private Label price8;
     @FXML
-    private Label priceLabel9;
+    private Label price9;
     @FXML
-    private Label priceLabel10;
+    private Label price10;
     @FXML
-    private Label priceLabel11;
+    private Label price11;
     @FXML
-    private Label priceLabel12;
+    private Label price12;
+
 
     @FXML
     private Label calories1;
     @FXML
-    private Label caloriesLabel2;
+    private Label calories2;
     @FXML
-    private Label caloriesLabel3;
+    private Label calories3;
     @FXML
-    private Label caloriesLabel4;
+    private Label calories4;
     @FXML
-    private Label caloriesLabel5;
+    private Label calories5;
     @FXML
-    private Label caloriesLabel6;
+    private Label calories6;
     @FXML
-    private Label caloriesLabel7;
+    private Label calories7;
     @FXML
-    private Label caloriesLabel8;
+    private Label calories8;
     @FXML
-    private Label caloriesLabel9;
+    private Label calories9;
     @FXML
-    private Label caloriesLabel10;
+    private Label calories10;
     @FXML
-    private Label caloriesLabel11;
+    private Label calories11;
     @FXML
-    private Label caloriesLabel12;
+    private Label calories12;
+
 
     User user = LoginController.getUser();
 
@@ -137,19 +139,19 @@ public class MenuController extends UIController {
                 stackPane11, stackPane12);
 
         // Populate the nameLabels list
-        nameLabels = Arrays.asList(name1, nameLabel2, nameLabel3, nameLabel4, nameLabel5,
-                nameLabel6, nameLabel7, nameLabel8, nameLabel9, nameLabel10,
-                nameLabel11, nameLabel12);
+        nameLabels = Arrays.asList(name1, name2, name3, name4, name5,
+                name6, name7, name8, name9, name10,
+                name11, name12);
 
         // Populate the priceLabels list
-        priceLabels = Arrays.asList(price1, priceLabel2, priceLabel3, priceLabel4, priceLabel5,
-                priceLabel6, priceLabel7, priceLabel8, priceLabel9, priceLabel10,
-                priceLabel11, priceLabel12);
+        priceLabels = Arrays.asList(price1, price2, price3, price4, price5,
+                price6, price7, price8, price9, price10,
+                price11, price12);
 
         // Populate the caloriesLabels list
-        caloriesLabels = Arrays.asList(calories1, caloriesLabel2, caloriesLabel3, caloriesLabel4,
-                caloriesLabel5, caloriesLabel6, caloriesLabel7, caloriesLabel8,
-                caloriesLabel9, caloriesLabel10, caloriesLabel11, caloriesLabel12);
+        caloriesLabels = Arrays.asList(calories1, calories2, calories3, calories4,
+                calories5, calories6, calories7, calories8,
+                calories9, calories10, calories11, calories12);
 
         // Initialize each StackPane
         for (StackPane pane : stackPanes) {
