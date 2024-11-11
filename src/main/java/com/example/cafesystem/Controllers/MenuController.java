@@ -1,14 +1,15 @@
 package com.example.cafesystem.Controllers;
 
+import com.example.cafesystem.Models.ImageHandler;
 import com.example.cafesystem.Models.Menu;
 import com.example.cafesystem.Models.MenuItem;
 import com.example.cafesystem.Models.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
-import java.awt.*;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
@@ -155,7 +156,7 @@ public class MenuController extends UIController {
 
         // Initialize each StackPane
         for (StackPane pane : stackPanes) {
-            pane.setVisible(false); // Example action; modify as needed
+            pane.setVisible(false);
         }
     }
 
@@ -164,22 +165,15 @@ public class MenuController extends UIController {
         Label selectedLabel = (Label) mouseEvent.getSource();
         String category = selectedLabel.getText();
 
-
         int index = 0;
         for (MenuItem menuItem : menu.getMenu()) {
 
             if (menuItem.getCategory().equals(category) && !currentCategory.equals(category)) {
                 System.out.println(menuItem);
 
-
-                String imageLocation = "/Images/"+menuItem.getImageLocation();
-                URL imageUrl = getClass().getResource(imageLocation);
-                if (imageUrl != null) {
-                    String imagePath = imageUrl.toExternalForm();
-                    stackPanes.get(index).setStyle("-fx-background-image: url('" + imagePath + "');");
-                } else {
-                    System.out.println("Resource not found.");
-                }
+                String imageLocation = "/Images/" + menuItem.getImageLocation();
+                ImageHandler imageHandler = new ImageHandler();
+                imageHandler.setStackPaneBackground(stackPanes.get(index), imageLocation);
 
                 stackPanes.get(index).setVisible(true);
                 nameLabels.get(index).setText(menuItem.getMenuItemName());
@@ -192,11 +186,12 @@ public class MenuController extends UIController {
         currentCategory = category;
     }
 
-    private void assignItemDetails(MenuItem menuItem) {
-        for (int i = 0; i < 12; i++) {
-
+    public void previewMenuItem() {
+        try {
+            Stage stage = new Stage();
+            loadNewStage(stage, "/previewMenuItem");
+        } catch (IOException e) {
+            throw new RuntimeException("Could not open stage!");
         }
     }
-
-
 }

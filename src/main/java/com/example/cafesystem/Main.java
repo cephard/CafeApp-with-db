@@ -6,14 +6,13 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class Main extends Application {
 
     DataBaseSetUp dataBaseSetUp = new DataBaseSetUp();
 
     @Override
-    public void start(Stage stage) throws IOException, SQLException {
+    public void start(Stage stage) throws IOException {
         UIController.loadNewStage(stage, "/login");
     }
 

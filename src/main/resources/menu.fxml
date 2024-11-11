@@ -23,7 +23,7 @@
             <RowConstraints maxHeight="70.0" minHeight="-Infinity" vgrow="SOMETIMES" />
             </rowConstraints>
            <children>
-            <StackPane fx:id="stackPane1" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover">
+            <StackPane fx:id="stackPane1" onMouseClicked="#previewMenuItem" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover">
                <GridPane.margin>
                    <Insets />
                </GridPane.margin>
