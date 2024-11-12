@@ -5,7 +5,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 
-import javax.swing.plaf.synth.Region;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -24,7 +23,7 @@ public class ImageHandler {
     }
 
     //regenerate image from URI
-    public void regenerateImage(File selectedImg, ImageView imageView) {
+    public void generateImage(File selectedImg, ImageView imageView) {
         if (selectedImg != null) {
             String imageURI = selectedImg.toURI().toString();
             imageView.setImage(new Image(imageURI));

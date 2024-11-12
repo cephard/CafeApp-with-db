@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -118,7 +119,8 @@ public class MenuController extends UIController {
     private Label calories12;
 
 
-    User user = LoginController.getUser();
+    private User user = LoginController.getUser();
+    private HashMap<StackPane, MenuItem> availableItems;
 
     @FXML
     private Label customerName;
@@ -130,6 +132,11 @@ public class MenuController extends UIController {
     private List<Label> nameLabels;
     private List<Label> priceLabels;
     private List<Label> caloriesLabels;
+    private static MenuItem selectedItem;
+
+    protected static MenuItem getSelectedItem(){
+        return selectedItem;
+    }
 
     public void initialize(URL location, ResourceBundle resources) {
         customerName.setText(user.getFirstName() + " " + user.getLastName());
@@ -162,6 +169,8 @@ public class MenuController extends UIController {
 
 
     public void selectMenuCategory(javafx.scene.input.MouseEvent mouseEvent) {
+        availableItems = new HashMap<>();
+
         Label selectedLabel = (Label) mouseEvent.getSource();
         String category = selectedLabel.getText();
 
@@ -169,7 +178,9 @@ public class MenuController extends UIController {
         for (MenuItem menuItem : menu.getMenu()) {
 
             if (menuItem.getCategory().equals(category) && !currentCategory.equals(category)) {
-                System.out.println(menuItem);
+                availableItems.put(stackPanes.get(index), menuItem);
+                //ystem.out.println(availableItems.get(stackPanes.get(index)));
+
 
                 String imageLocation = "/Images/" + menuItem.getImageLocation();
                 ImageHandler imageHandler = new ImageHandler();
@@ -186,12 +197,12 @@ public class MenuController extends UIController {
         currentCategory = category;
     }
 
-    public void previewMenuItem() {
-        try {
-            Stage stage = new Stage();
-            loadNewStage(stage, "/previewMenuItem");
-        } catch (IOException e) {
-            throw new RuntimeException("Could not open stage!");
+    public void previewMenuItem(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        StackPane stackPane = (StackPane) mouseEvent.getSource();
+        if (availableItems.containsKey(stackPane)) {
+           selectedItem = availableItems.get(stackPane);
+           setRoot("/previewMenuItem");
+           System.out.println(availableItems.get(stackPane));
         }
     }
 }

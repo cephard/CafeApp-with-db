@@ -55,7 +55,7 @@ public class AddMenuItemController {
 
     public void selectImage() {
         selectedImage = imageHandler.loadImage();
-        imageHandler.regenerateImage(selectedImage, itemImage);
+        imageHandler.generateImage(selectedImage, itemImage);
     }
 
     private String checkName() {

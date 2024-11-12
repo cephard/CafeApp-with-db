@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.MenuController">
+<BorderPane stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.PreviewMenuItemController">
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
    <bottom>
         <HBox alignment="BOTTOM_RIGHT" fillHeight="false" spacing="20.0" BorderPane.alignment="CENTER">
            <children>
-               <Button fx:id="backButton" styleClass="main-button" text="Back" />
+               <Button fx:id="backButton" styleClass="main-button"  onMouseClicked="#returnToMenu" text="Back" />
                <Button fx:id="checkoutButton" styleClass="main-button" text="Remove" />
             <Button fx:id="backButton1" styleClass="main-button" text="Add to Cart" />
            </children>
@@ -26,22 +26,21 @@
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Label" />
-            <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="itemName" text="Label" />
+            <ImageView fx:id="itemImage" fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" />
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <Label text="Name" />
-                  <Label text="Price" />
-                  <Label text="Calories" />
+                  <Label fx:id="itemPrice" text="Price" />
+                  <Label fx:id="itemCalories" text="Calories" />
                </children>
             </HBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label text="Description" />
+                  <Label fx:id="itemDescription" text="Description" />
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label text="Quantity" />
-                        <TextField prefHeight="31.0" prefWidth="65.0" />
+                        <Label text="Quantity"/>
+                        <TextField prefHeight="31.0" prefWidth="65.0" text="1" />
                      </children>
                   </HBox>
                </children>
