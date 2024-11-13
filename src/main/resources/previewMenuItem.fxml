@@ -14,7 +14,7 @@
    <bottom>
         <HBox alignment="BOTTOM_RIGHT" fillHeight="false" spacing="20.0" BorderPane.alignment="CENTER">
            <children>
-               <Button fx:id="backButton" styleClass="main-button"  onMouseClicked="#returnToMenu" text="Back" />
+               <Button fx:id="backButton" onMouseClicked="#returnToMenu" styleClass="main-button" text="Back" />
                <Button fx:id="checkoutButton" styleClass="main-button" text="Remove" />
             <Button fx:id="backButton1" styleClass="main-button" text="Add to Cart" />
            </children>
@@ -26,22 +26,40 @@
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="itemName" text="Label" />
-            <ImageView fx:id="itemImage" fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" />
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+            <Label fx:id="itemName" alignment="CENTER" contentDisplay="CENTER" text="Name">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+            <ImageView fx:id="itemImage" fitHeight="200.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></ImageView>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="3.0">
                <children>
+                  <Label text="£" />
                   <Label fx:id="itemPrice" text="Price" />
+                  <Label text="          " />
                   <Label fx:id="itemCalories" text="Calories" />
+                  <Label text="Kcal" />
                </children>
             </HBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label fx:id="itemDescription" text="Description" />
+                  <Label fx:id="itemDescription" prefHeight="43.0" prefWidth="426.0" text="Description">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin></Label>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label text="Quantity"/>
+                        <Label text="Quantity" />
                         <TextField prefHeight="31.0" prefWidth="65.0" text="1" />
                      </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="10.0" />
+                     </VBox.margin>
                   </HBox>
                </children>
             </VBox>

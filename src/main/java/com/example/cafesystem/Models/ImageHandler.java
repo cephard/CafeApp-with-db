@@ -45,8 +45,16 @@ public class ImageHandler {
         return imageName;
     }
 
-    public void setStackPaneBackground(StackPane container, String imageLocation) {
+
+    //select an image from the file system
+    public URL getImageUrl(String imageLocation){
         URL imageUrl = getClass().getResource(imageLocation);
+        return imageUrl;
+    }
+
+
+    public void setStackPaneBackground(StackPane container, String imageLocation) {
+        URL imageUrl = getImageUrl(imageLocation);
         if (imageUrl != null) {
             String imagePath = imageUrl.toExternalForm();
             container.setStyle("-fx-background-image: url('" + imagePath + "');");

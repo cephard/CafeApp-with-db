@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,6 +24,8 @@ public class PreviewMenuItemController extends UIController {
     @FXML
     private Label itemName;
 
+    private Image image;
+    private ImageHandler imageHandler;
 
     public void initialize(URL location, ResourceBundle resources) {
         MenuItem selectedItem = MenuController.getSelectedItem();
@@ -30,11 +33,10 @@ public class PreviewMenuItemController extends UIController {
         itemPrice.setText(String.valueOf(selectedItem.getPrice()));
         itemCalories.setText(String.valueOf(selectedItem.getCalories()));
         itemDescription.setText(selectedItem.getDescription());
-
-        ImageHandler imageHandler = new ImageHandler();
-        //Image image = imageHandler.generateImage(menuItemImage,);
-        //menuItemImage.setImage();
-
+        imageHandler =  new ImageHandler();
+        URL imageUrl = imageHandler.getImageUrl("/Images/" + selectedItem.getImageLocation());
+        Image image = new Image(String.valueOf(imageUrl));
+        itemImage.setImage(image);
     }
 
     public void returnToMenu() throws IOException {

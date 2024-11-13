@@ -1,21 +1,12 @@
 package com.example.cafesystem.Controllers;
 
-import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Models.ImageHandler;
 import com.example.cafesystem.Models.MenuItem;
 import com.example.cafesystem.Models.SqlQueries;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.FileChooser;
-
-import java.awt.event.MouseEvent;
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 
 public class AddMenuItemController {
     private final ImageHandler imageHandler = new ImageHandler();
