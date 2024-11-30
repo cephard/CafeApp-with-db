@@ -1,10 +1,10 @@
+//User entry point into the system
 package com.example.cafesystem;
 
 import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Controllers.UIController;
 import javafx.application.Application;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class Main extends Application {

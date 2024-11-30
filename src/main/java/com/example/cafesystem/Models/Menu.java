@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Menu {
-    MenuItem menuItem;
-    ArrayList<MenuItem> menuItems = new ArrayList<>();
+    private MenuItem menuItem;
+    private ArrayList<MenuItem> menuItems = new ArrayList<>();
 
     public Menu() {
         DataBaseSetUp dataBaseSetUp = new DataBaseSetUp();
@@ -19,7 +19,9 @@ public class Menu {
             PreparedStatement preparedStatement = dataBaseSetUp.getConnection().prepareStatement(loadMenuItems);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
+
+                //directly creating an item from the database
                 menuItem = new MenuItem(resultSet.getString(2),
                         resultSet.getString(3),
                         resultSet.getInt(4),
@@ -28,7 +30,8 @@ public class Menu {
                         resultSet.getInt(7),
                         resultSet.getString(8));
 
-                menuItems.add(menuItem);            }
+                menuItems.add(menuItem);
+            }
             preparedStatement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -37,11 +40,11 @@ public class Menu {
     }
 
 
-    public ArrayList<MenuItem> getMenu(){
-       return menuItems;
+    public ArrayList<MenuItem> getMenu() {
+        return menuItems;
     }
 
-    public int getMenuSize(){
+    public int getMenuSize() {
         return menuItems.size();
     }
 }

@@ -11,7 +11,6 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
 public class ImageHandler {
 
     //Choose a file from explorer
@@ -45,13 +44,11 @@ public class ImageHandler {
         return imageName;
     }
 
-
     //select an image from the file system
     public URL getImageUrl(String imageLocation){
         URL imageUrl = getClass().getResource(imageLocation);
         return imageUrl;
     }
-
 
     public void setStackPaneBackground(StackPane container, String imageLocation) {
         URL imageUrl = getImageUrl(imageLocation);

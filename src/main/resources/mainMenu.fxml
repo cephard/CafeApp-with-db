@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -86,7 +85,7 @@
    <bottom>
         <HBox alignment="BOTTOM_RIGHT" fillHeight="false" prefHeight="39.0" prefWidth="476.0" spacing="20.0" BorderPane.alignment="CENTER">
            <children>
-               <Button fx:id="backButton" styleClass="main-button" text="Back" />
+               <Button styleClass="main-button" text="Back" onMouseClicked="#back"/>
                <Button fx:id="checkoutButton" styleClass="main-button" text="Cart" />
            </children>
          <BorderPane.margin>

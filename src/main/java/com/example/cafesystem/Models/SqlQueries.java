@@ -2,7 +2,6 @@ package com.example.cafesystem.Models;
 
 import com.example.cafesystem.CRUD.DataBaseSetUp;
 
-import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Collections;
@@ -135,6 +134,7 @@ public class SqlQueries {
     }
 
 
+
     public void dropColumn(String tableName, String column) {
         String dropColumn = "ALTER TABLE " + tableName + " DROP COLUMN " + column;
         dataBaseSetUp.runSQLQuery(dropColumn);
@@ -145,7 +145,6 @@ public class SqlQueries {
         dataBaseSetUp.createConnection();
 
     }
-
 
     public void insertNewRecord(String tableName, HashMap<String, Object> entries) {
         if (entries.isEmpty()) {
@@ -180,19 +179,14 @@ public class SqlQueries {
         dataBaseSetUp.createConnection();
         String sqlCode = "Delete from " + tableName + " WHERE menu_item_id = ?";
 
-
-        try( PreparedStatement preparedStatement = dataBaseSetUp.getConnection().prepareStatement(sqlCode)) {
-
+        try (PreparedStatement preparedStatement = dataBaseSetUp.getConnection().prepareStatement(sqlCode)) {
             preparedStatement.setObject(1, recordID);
             preparedStatement.executeUpdate();
-            System.out.println("Yey ");
-
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
 
-                dataBaseSetUp.stopConnection();
+            dataBaseSetUp.stopConnection();
         }
     }
 }

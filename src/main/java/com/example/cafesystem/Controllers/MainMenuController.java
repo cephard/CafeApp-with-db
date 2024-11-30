@@ -16,6 +16,10 @@ public class MainMenuController extends UIController{
         setRoot("/menu");
     }
 
+    public void back() throws IOException {
+        setRoot("/login");
+    }
+
     public void openSpecialMenu(){
 
     }

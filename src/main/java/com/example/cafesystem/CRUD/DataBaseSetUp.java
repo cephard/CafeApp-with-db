@@ -1,7 +1,5 @@
 package com.example.cafesystem.CRUD;
 
-import com.example.cafesystem.Models.Customer;
-
 import java.sql.*;
 
 public class DataBaseSetUp {

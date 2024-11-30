@@ -7,7 +7,6 @@ import com.example.cafesystem.Models.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -168,6 +167,7 @@ public class MenuController extends UIController {
     }
 
 
+    //selects menuitem and adds into menu based on the category
     public void selectMenuCategory(javafx.scene.input.MouseEvent mouseEvent) {
         availableItems = new HashMap<>();
 
@@ -179,8 +179,6 @@ public class MenuController extends UIController {
 
             if (menuItem.getCategory().equals(category) && !currentCategory.equals(category)) {
                 availableItems.put(stackPanes.get(index), menuItem);
-                //ystem.out.println(availableItems.get(stackPanes.get(index)));
-
 
                 String imageLocation = "/Images/" + menuItem.getImageLocation();
                 ImageHandler imageHandler = new ImageHandler();

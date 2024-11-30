@@ -10,7 +10,7 @@ public class MenuItem {
     private int calories;
     private boolean isAvailable;
     private String imageLocation;
-    
+    private int quantity;
 
 
     public MenuItem(String menuItemName, String description, double price, String category, int calories) {
@@ -20,9 +20,10 @@ public class MenuItem {
         this.category = category;
         this.calories = calories;
         isAvailable = true;
+        quantity = 1;
     }
-//                                  1, 2,3,4,    6,5,7
-    public MenuItem(String menuItemName, String description, int price, String category,  boolean isAvailable, int calories, String imageLocation) {
+
+    public MenuItem(String menuItemName, String description, int price, String category, boolean isAvailable, int calories, String imageLocation) {
         this.menuItemName = menuItemName;
         this.description = description;
         this.price = price;
@@ -30,6 +31,7 @@ public class MenuItem {
         this.calories = calories;
         this.isAvailable = isAvailable;
         this.imageLocation = imageLocation;
+        quantity = 1;
     }
 
     public MenuItem() {
@@ -84,23 +86,48 @@ public class MenuItem {
         return calories;
     }
 
-    public int setCalories(int calories) {
-        return this.calories = calories;
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
-    public void InsertMenuItem() {
-
+    public void setImageLocation(String imageLocation) {
+        this.imageLocation = imageLocation;
     }
 
     public String getImageLocation() {
         return imageLocation;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
 
+    //assigns new quantity
+    public void setQuantity(int quantity) {
+        if (quantity < 1) throw new IllegalArgumentException("Quantity cannot be less than 1");
+        this.quantity = quantity;
+    }
+
+    //increases quantity by one
+    public void increamentQuantity() {
+        this.quantity++;
+    }
+
+    //
+    public HashMap<String, Object> menuItemSet() {
+        HashMap<String, Object> menuItem = new HashMap<String, Object>();
+        menuItem.put("name", menuItemName);
+        menuItem.put("price", price);
+        menuItem.put("calories", calories);
+        menuItem.put("category", category);
+        menuItem.put("description", description);
+        menuItem.put("is_available", isAvailable);
+        menuItem.put("image_location", imageLocation);
+        return menuItem;
+    }
 
     @Override
     public String toString() {
-       // return String(menuItemName + " " + description + " " + price + " " + category + " " + calories + " " + isAvailable);
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(menuItemName);
         stringBuilder.append(description);
@@ -111,21 +138,5 @@ public class MenuItem {
         stringBuilder.append(imageLocation);
 
         return stringBuilder.toString();
-    }
-
-    public HashMap<String,Object>menuItemSet(){
-        HashMap<String,Object> menuItem = new HashMap<String,Object>();
-        menuItem.put("name",menuItemName);
-        menuItem.put("price", price);
-        menuItem.put("calories", calories);
-        menuItem.put("category", category);
-        menuItem.put("description", description);
-        menuItem.put("is_available", isAvailable);
-        menuItem.put("image_location", imageLocation);
-        return menuItem;
-    }
-
-    public void setImageLocation(String imageLocation) {
-        this.imageLocation = imageLocation;
     }
 }

@@ -1,3 +1,5 @@
+// Class that handles the UI elements when entering a new Item into the database
+
 package com.example.cafesystem.Controllers;
 
 import com.example.cafesystem.Models.ImageHandler;
@@ -25,6 +27,7 @@ public class AddMenuItemController {
     MenuItem menuItem = new MenuItem();
     private PopUpController popUpController = new PopUpController();
 
+    //checking all the npt fields if to ensure null values are not entered
     private void checkNullValues(Object value, String valueName) {
         if (value == null) {
             popUpController.showPopup(valueName + " Error", valueName + " cannot be null");
@@ -32,6 +35,7 @@ public class AddMenuItemController {
         }
     }
 
+    //Checks mouse event and assigns menuItem category name based on the Label id
     public void getSelectedCategory(javafx.scene.input.MouseEvent mouseEvent) {
         Label selectedLabel = (Label) mouseEvent.getSource();
         String category = selectedLabel.getText();
@@ -39,11 +43,13 @@ public class AddMenuItemController {
         System.out.println("Selected Category: " + category);
     }
 
+    //Ensuring the item has been assigned a category
     public String checkCategory(){
         checkNullValues(selectedCategory, "Category");
         return selectedCategory;
     }
 
+    //
     public void selectImage() {
         selectedImage = imageHandler.loadImage();
         imageHandler.generateImage(selectedImage, itemImage);
@@ -78,6 +84,7 @@ public class AddMenuItemController {
         return Integer.parseInt(calories);
     }
 
+    //
         public void addMenuItem () {
             checkNullValues(selectedImage, "Image");
             menuItem.setMenuItemName(checkName());

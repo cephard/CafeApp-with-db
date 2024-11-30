@@ -4,7 +4,6 @@ import com.example.cafesystem.CRUD.DataBaseSetUp;
 import com.example.cafesystem.Models.Authenticator;
 import com.example.cafesystem.Models.User;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
