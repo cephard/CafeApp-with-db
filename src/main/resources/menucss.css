@@ -271,8 +271,9 @@
     -fx-font-size: 1.5em;
 }
 
-list-view .cell {
+.list-view .cell {
     -fx-min-height: 100px;
+
 }
 
 .list-view .cell:even {
@@ -285,7 +286,6 @@ list-view .cell {
 
 .list-view .cell:hover {
     -fx-background-color: #FFA500;
-       -fx-text-fill: #FFFFFF;
 }
 
 

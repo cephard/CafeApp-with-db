@@ -15,8 +15,9 @@
         <HBox alignment="BOTTOM_RIGHT" fillHeight="false" spacing="20.0" BorderPane.alignment="CENTER">
            <children>
                <Button onMouseClicked="#returnToMenu" styleClass="main-button" text="Back" />
-               <Button styleClass="main-button" text="Remove" onMouseClicked="#removeItemToCart"/>
-            <Button styleClass="main-button" text="Add to Cart" onMouseClicked="#addItemToCart"/>
+               <Button onMouseClicked="#removeItemToCart" styleClass="main-button" text="Remove" />
+            <Button onMouseClicked="#addItemToCart" styleClass="main-button" text="Add to Cart" />
+            <Button onMouseClicked="#openCart" styleClass="main-button" text="Cart" />
            </children>
          <BorderPane.margin>
             <Insets bottom="20.0" left="5.0" right="5.0" top="5.0" />
@@ -55,7 +56,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label text="Quantity" />
-                        <TextField prefHeight="31.0" prefWidth="65.0" text="1" />
+                        <TextField fx:id="quantityText" prefHeight="31.0" prefWidth="65.0" text="1" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="20.0" top="10.0" />

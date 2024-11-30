@@ -1,6 +1,8 @@
 package com.example.cafesystem.Models;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +11,7 @@ import java.util.List;
 
 public class Cart {
 
-    private List<MenuItem> itemsInCart;
+    private ObservableList<MenuItem> itemsInCart;
     private static final String CART_FILE_PATH = "src/main/resources/cart.json";
 
     public Cart() {
@@ -21,8 +23,7 @@ public class Cart {
             throw new IllegalArgumentException("Menu Item cannot be null");
         }
 
-        boolean exists = itemsInCart.stream()
-                .anyMatch(cartItem -> cartItem.getMenuItemName().equalsIgnoreCase(item.getMenuItemName()));
+        boolean exists = itemsInCart.stream().anyMatch(cartItem -> cartItem.getMenuItemName().equalsIgnoreCase(item.getMenuItemName()));
 
         if (exists) {
             System.out.println("Item is already in the cart.");
@@ -38,8 +39,7 @@ public class Cart {
             throw new IllegalArgumentException("Menu Item cannot be null");
         }
 
-        boolean removed = itemsInCart.removeIf(cartItem ->
-                cartItem.getMenuItemName().equalsIgnoreCase(item.getMenuItemName()));
+        boolean removed = itemsInCart.removeIf(cartItem -> cartItem.getMenuItemName().equalsIgnoreCase(item.getMenuItemName()));
 
         if (removed) {
             saveCartToJson(); // Update the JSON file
@@ -64,7 +64,7 @@ public class Cart {
     }
 
     // Load the cart from JSON
-    private List<MenuItem> loadCartFromJson() {
+    private ObservableList<MenuItem> loadCartFromJson() {
         ObjectMapper mapper = new ObjectMapper();
         File file = new File(CART_FILE_PATH);
 
@@ -82,18 +82,21 @@ public class Cart {
         try {
             // Check if the file is empty before trying to read it
             if (file.length() == 0) {
-                return new ArrayList<>();  // Return an empty list if the file is empty
+                return FXCollections.observableArrayList(); // Return an empty ObservableList if the file is empty
             }
 
-            // Read the existing file and return the list
-            return mapper.readValue(file, mapper.getTypeFactory().constructCollectionType(List.class, MenuItem.class));
+            // Read the existing file and return as an ObservableList
+            List<MenuItem> list = mapper.readValue(
+                    file,
+                    mapper.getTypeFactory().constructCollectionType(List.class, MenuItem.class)
+            );
+
+            return FXCollections.observableArrayList(list);
         } catch (IOException e) {
             System.err.println("Error loading cart from JSON: " + e.getMessage());
         }
 
-        return new ArrayList<>();
+        return FXCollections.observableArrayList();
     }
-
-
 }
 
