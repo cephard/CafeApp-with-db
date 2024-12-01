@@ -39,7 +39,8 @@ public class Cart {
             throw new IllegalArgumentException("Menu Item cannot be null");
         }
 
-        boolean removed = itemsInCart.removeIf(cartItem -> cartItem.getMenuItemName().equalsIgnoreCase(item.getMenuItemName()));
+        boolean removed = itemsInCart.removeIf(cartItem ->
+                cartItem.getMenuItemName().equalsIgnoreCase(item.getMenuItemName()));
 
         if (removed) {
             saveCartToJson(); // Update the JSON file

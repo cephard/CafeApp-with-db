@@ -26,7 +26,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button styleClass="main-button" text="Back" />
+                  <Button styleClass="main-button" text="Menu" onMouseClicked="#openMenu"/>
                   <Button styleClass="main-button" text="Check out" />
                </children>
             </HBox>

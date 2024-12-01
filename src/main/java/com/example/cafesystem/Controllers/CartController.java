@@ -14,8 +14,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.control.Label;
 
 import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CartController {
+public class CartController extends UIController {
 
     @FXML
     private ListView<MenuItem> cartListView;
@@ -26,7 +27,9 @@ public class CartController {
     private Label totalPriceLabel;
 
     @FXML
-    public void initialize() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        super.initialize(location, resources);
         // Initialize the cart and load items
         cart = new Cart();
         imageHandler = new ImageHandler();
@@ -45,8 +48,8 @@ public class CartController {
 
             {
                 imageView = new ImageView();
-                imageView.setFitHeight(50); // Set image size
-                imageView.setFitWidth(50); // Set image size
+                imageView.setFitHeight(100); // Set image size
+                imageView.setFitWidth(100); // Set image size
                 text = new Label();
                 content = new HBox(10, imageView, text); // Layout with spacing
             }

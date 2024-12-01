@@ -12,14 +12,6 @@ public class MainMenuController extends UIController{
     public StackPane stackPane4;
 
 
-    public void openMenu() throws IOException {
-        setRoot("/menu");
-    }
-
-    public void back() throws IOException {
-        setRoot("/login");
-    }
-
     public void openSpecialMenu(){
 
     }

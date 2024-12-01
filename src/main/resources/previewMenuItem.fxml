@@ -14,7 +14,7 @@
    <bottom>
         <HBox alignment="BOTTOM_RIGHT" fillHeight="false" spacing="20.0" BorderPane.alignment="CENTER">
            <children>
-               <Button onMouseClicked="#returnToMenu" styleClass="main-button" text="Back" />
+               <Button onMouseClicked="#openMenu" styleClass="main-button" text="Back" />
                <Button onMouseClicked="#removeItemToCart" styleClass="main-button" text="Remove" />
             <Button onMouseClicked="#addItemToCart" styleClass="main-button" text="Add to Cart" />
             <Button onMouseClicked="#openCart" styleClass="main-button" text="Cart" />

@@ -36,5 +36,17 @@ public abstract class UIController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+
+    public void openLogIn() throws IOException {
+        setRoot("/login");
+    }
+
+    public void openMenu() throws IOException {
+        setRoot("/menu");
+    }
+
+    public void openCart() throws IOException {
+        setRoot("/Cart");
+    }
 }
 

@@ -63,10 +63,6 @@ public class PreviewMenuItemController extends UIController {
         }
     }
 
-    public void returnToMenu() throws IOException {
-        setRoot("/menu");
-    }
-
     public void addItemToCart() {
         cart.addItem(menuItem);
     }
@@ -75,7 +71,4 @@ public class PreviewMenuItemController extends UIController {
         cart.removeItem(menuItem);
     }
 
-    public void openCart() throws IOException {
-        setRoot("/Cart");
-    }
 }
