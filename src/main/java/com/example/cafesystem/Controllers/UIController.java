@@ -48,5 +48,13 @@ public abstract class UIController implements Initializable {
     public void openCart() throws IOException {
         setRoot("/Cart");
     }
+
+    public void openStaff() throws IOException {
+        setRoot("/Staff");
+    }
+
+    public void openStaffProfile() throws IOException {
+        setRoot("/StaffProfile");
+    }
 }
 
