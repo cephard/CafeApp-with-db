@@ -1,11 +1,13 @@
 package com.example.cafesystem.Models;
 
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.MenuItem;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 public class User {
     private String firstName;
@@ -15,6 +17,9 @@ public class User {
     private Long phoneNumber;
     private Date dateOfBirth;
     private String password;
+
+    private List<MenuItem> selectedItems;
+    private List<Order> orders;
 
     public User(){
 
@@ -108,5 +113,13 @@ public class User {
         user.put("address",address);
         user.put("password",password);
         return user;
+    }
+
+    public List<MenuItem> getSelectedItems() {
+        return selectedItems;
+    }
+
+    public void addItem(MenuItem menuItem) {
+        this.selectedItems.add(menuItem);
     }
 }

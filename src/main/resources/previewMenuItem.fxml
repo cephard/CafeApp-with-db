@@ -8,21 +8,21 @@
 <?import javafx.scene.text.*?>
 
 <BorderPane stylesheets="@menucss.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cafesystem.Controllers.PreviewMenuItemController">
-    <padding>
-        <Insets bottom="20" left="20" right="20" top="20" />
-    </padding>
+   <padding>
+      <Insets bottom="20" left="20" right="20" top="20" />
+   </padding>
    <bottom>
-        <HBox alignment="BOTTOM_RIGHT" fillHeight="false" spacing="20.0" BorderPane.alignment="CENTER">
-           <children>
-               <Button onMouseClicked="#openMenu" styleClass="main-button" text="Back" />
-               <Button onMouseClicked="#removeItemToCart" styleClass="main-button" text="Remove" />
+      <HBox alignment="BOTTOM_RIGHT" fillHeight="false" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button onMouseClicked="#openMenu" styleClass="main-button" text="Back" />
+            <Button onMouseClicked="#removeItemFromCart" styleClass="main-button" text="Remove" />
             <Button onMouseClicked="#addItemToCart" styleClass="main-button" text="Add to Cart" />
             <Button onMouseClicked="#openCart" styleClass="main-button" text="Cart" />
-           </children>
+         </children>
          <BorderPane.margin>
             <Insets bottom="20.0" left="5.0" right="5.0" top="5.0" />
          </BorderPane.margin>
-        </HBox>
+      </HBox>
    </bottom>
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
@@ -33,11 +33,13 @@
                </font>
                <VBox.margin>
                   <Insets />
-               </VBox.margin></Label>
+               </VBox.margin>
+            </Label>
             <ImageView fx:id="itemImage" fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
                   <Insets bottom="10.0" left="20.0" right="20.0" top="5.0" />
-               </VBox.margin></ImageView>
+               </VBox.margin>
+            </ImageView>
             <HBox alignment="BOTTOM_LEFT" spacing="3.0">
                <children>
                   <Label text="£" />
@@ -52,11 +54,12 @@
                   <Label fx:id="itemDescription" text="Description" wrapText="true">
                      <VBox.margin>
                         <Insets top="10.0" />
-                     </VBox.margin></Label>
+                     </VBox.margin>
+                  </Label>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <Label text="Quantity" />
-                        <TextField fx:id="quantityText" prefHeight="31.0" prefWidth="65.0" text="1" />
+                        <Spinner fx:id="quantitySpinner" prefHeight="31.0" prefWidth="65.0" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="20.0" top="10.0" />
