@@ -3,6 +3,25 @@ package com.example.cafesystem.Models;
 import java.util.ArrayList;
 
 public class Customer extends User {
+
+    private static volatile Customer singletonCustomer = null;
+
+    private Customer() {
+
+    }
+
+    public static Customer getCustomerInstance() {
+        if (singletonCustomer == null) {
+            synchronized (Customer.class) {
+                if (singletonCustomer == null) {
+                    singletonCustomer = new Customer();
+                }
+            }
+        }
+
+        return singletonCustomer;
+    }
+
     private boolean isLoyaltyMember;
     private int loyaltyPoints;
 

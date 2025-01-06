@@ -31,11 +31,11 @@ public class SignUpController extends UIController {
 
     //check if email is valid before saving
     public String checkEmail() {
-        String email= "^[\\w-\\.]+@[\\w-\\.]+\\.[a-zA-Z]{2,}$";
+        String email = "^[\\w-\\.]+@[\\w-\\.]+\\.[a-zA-Z]{2,}$";
         String userEmail = emailField.getText();
         String invalidMail = "Input a valid email";
 
-        if(!userEmail.matches(email)){
+        if (!userEmail.matches(email)) {
             popUpController.showPopup("Email error", invalidMail);
             throw new IllegalArgumentException(invalidMail);
         }
@@ -60,7 +60,7 @@ public class SignUpController extends UIController {
 
     public Long checkPhoneNumber() {
         String phoneNUmber = phoneNumberField.getText();
-        String nullPhoneNumber ="Phone number cannot be null";
+        String nullPhoneNumber = "Phone number cannot be null";
         String invalidPhoneNumber = "Please enter a valid phone number";
         if (phoneNUmber == null) {
             popUpController.showPopup("Title", nullPhoneNumber);
@@ -83,6 +83,7 @@ public class SignUpController extends UIController {
         user.setPassword(checkPassword());
 
         insertUser(user.userSet());
+        createCustomer(user.getFirstName(),Authenticator.harshPassword(user.getPassword()));
         popUpController.showPopup("Success", user.getFirstName() + "is successfully signed up!");
     }
 
@@ -90,5 +91,10 @@ public class SignUpController extends UIController {
     public void insertUser(HashMap<String, Object> userSet) throws IOException {
         SqlQueries sqlQueries = new SqlQueries();
         sqlQueries.insertNewRecord("Users", userSet);
+    }
+
+    public void createCustomer(String firstName, String password) {
+        SqlQueries sqlQueries = new SqlQueries();
+        String customer = "SELECT user_id FROM Users WHERE " + "first_name=" + firstName + " AND " + "password=" + password;
     }
 }

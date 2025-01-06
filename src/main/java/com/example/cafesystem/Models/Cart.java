@@ -1,11 +1,11 @@
 package com.example.cafesystem.Models;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import javafx.collections.FXCollections;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -149,4 +149,22 @@ public class Cart {
         }
         return new ArrayList<>();
     }
+
+    //
+    public HashMap<String, Object> catSet() {
+        HashMap<String, Object> menuItem = new HashMap<String, Object>();
+        menuItem.put("customer_id", 1);
+        menuItem.put("cart_data", itemsInCart);
+        return menuItem;
+    }
+
+
+
+
+
+
+
+
+
+
 }

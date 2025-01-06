@@ -61,12 +61,12 @@
                   </Label>
                </children>
             </StackPane>
-            <StackPane fx:id="stackPane4" onMouseClicked="#openMenu"  layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <StackPane fx:id="stackPane4" onMouseClicked="#openBookTable"  layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="100.0" styleClass="stack-pane-hover" GridPane.columnIndex="1" GridPane.rowIndex="1">
                 <GridPane.margin>
                     <Insets />
                 </GridPane.margin>
                 <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" styleClass="main-menu-text" text="Dine In Booking">
+                  <Label alignment="CENTER"  contentDisplay="CENTER" styleClass="main-menu-text" text="Dine In Booking">
                      <StackPane.margin>
                         <Insets top="7.5" />
                      </StackPane.margin>

@@ -34,15 +34,15 @@ public class LoginController extends UIController {
         readRecord(userNameField.getText(), Authenticator.harshPassword(passwordField.getText()));
     }
 
-    public void readRecord(String userName, String userPassword) {
+    public void readRecord(String email, String userPassword) {
         DataBaseSetUp dataBaseSetUp = new DataBaseSetUp();
         dataBaseSetUp.createConnection();
 
-        String readUser = "Select * from Users WHERE first_name = ? AND password = ?";
+        String readUser = "Select * from Users WHERE email = ? AND password = ?";
 
         try {
             PreparedStatement preparedStatement = dataBaseSetUp.getConnection().prepareStatement(readUser);
-            preparedStatement.setString(1, userName);
+            preparedStatement.setString(1, email);
             preparedStatement.setString(2, userPassword);
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -53,9 +53,7 @@ public class LoginController extends UIController {
                 popUpController.showPopup("Success", "Welcome " + user.getFirstName());
                 UIController.setRoot("/mainMenu");
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
     }

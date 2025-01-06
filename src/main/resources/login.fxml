@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -22,7 +23,7 @@
             <children>
                 <VBox alignment="CENTER_LEFT" prefHeight="268.0" prefWidth="379.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <children>
-                        <Label prefHeight="29.0" prefWidth="70.0" text="UserName">
+                        <Label prefHeight="29.0" prefWidth="70.0" text="Email">
                             <font>
                                 <Font size="15.0" />
                             </font>

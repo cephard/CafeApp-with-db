@@ -4,6 +4,7 @@ import com.example.cafesystem.CRUD.DataBaseSetUp;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Collections;
 import java.util.HashMap;
 
@@ -126,13 +127,28 @@ public class SqlQueries {
             "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
             ")";
 
+    public void createCustomer() {
+        String customer = "CREATE TABLE Customer (" +
+                "customer_id INTEGER PRIMARY KEY," +
+                "isLoyaltyMember BOOLEAN NOT NULL," +
+                "loyaltyPoints INTEGER DEFAULT 0," +
+                "userID INTEGER NOT NULL," +
+                "FOREIGN KEY (userID) REFERENCES User(userID));";
+        dataBaseSetUp.createConnection();
+        try {
+            Statement stmt = dataBaseSetUp.getConnection().createStatement();
+            stmt.executeUpdate(customer);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     // Alter table statements to add password column
     public void addColumn(String tableName, String column, String dataType) {
         dataBaseSetUp.createConnection();
         String addColumn = "ALTER TABLE " + tableName + " ADD COLUMN " + column + " " + dataType + " NOT NULL";
         dataBaseSetUp.runSQLQuery(addColumn);
     }
-
 
 
     public void dropColumn(String tableName, String column) {

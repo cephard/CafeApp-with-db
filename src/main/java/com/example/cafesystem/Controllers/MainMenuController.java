@@ -15,4 +15,9 @@ public class MainMenuController extends UIController{
     public void openSpecialMenu(){
 
     }
+
+    public void openBookTable() throws IOException {
+        UIController.setRoot("/bookTable");
+    }
+
 }

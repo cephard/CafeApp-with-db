@@ -9,6 +9,8 @@ module com.example.cafesystem {
     requires org.slf4j;
     requires java.desktop;
     requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.core;
+    requires org.mockito;
 
     opens com.example.cafesystem to javafx.fxml;
     opens com.example.cafesystem.Controllers to javafx.fxml;
