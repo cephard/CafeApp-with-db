@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.cafesystem.Controllers.BookTableController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- VBox to center all elements -->
+    <center>
+        <VBox alignment="CENTER" spacing="20" prefWidth="300.0" prefHeight="350.0">
+            <!-- Title Label -->
+            <Label text="Book a Table" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+            <!-- Table Type Dropdown -->
+            <HBox alignment="CENTER" spacing="15.0">
+                <Label text="Select Table Type:"/>
+                <ComboBox fx:id="tableTypeComboBox" prefWidth="150.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="2 Seats"/>
+                            <String fx:value="4 Seats"/>
+                            <String fx:value="6 Seats"/>
+                            <String fx:value="10 Seats"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+            </HBox>
+
+            <!-- Date Picker -->
+            <HBox alignment="CENTER" spacing="15.0">
+                <Label text="Select Date:"/>
+                <DatePicker fx:id="datePicker"/>
+            </HBox>
+
+            <!-- Start Time Selector -->
+            <HBox alignment="CENTER" spacing="15.0">
+                <Label text="Select Start Time:"/>
+                <HBox spacing="15.0">
+                    <ComboBox fx:id="startHourComboBox" prefWidth="70.0">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="06"/>
+                                <String fx:value="07"/>
+                                <String fx:value="08"/>
+                                <String fx:value="09"/>
+                                <String fx:value="10"/>
+                                <String fx:value="11"/>
+                                <String fx:value="12"/>
+                                <String fx:value="13"/>
+                                <String fx:value="14"/>
+                                <String fx:value="15"/>
+                                <String fx:value="16"/>
+                                <String fx:value="17"/>
+                                <String fx:value="18"/>
+                                <String fx:value="19"/>
+                                <String fx:value="20"/>
+                                <String fx:value="21"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                    <ComboBox fx:id="startMinuteComboBox" prefWidth="70.0">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="00"/>
+                                <String fx:value="15"/>
+                                <String fx:value="30"/>
+                                <String fx:value="45"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+            </HBox>
+
+            <!-- End Time Selector -->
+            <HBox alignment="CENTER" spacing="15.0">
+                <Label text="Select End Time:"/>
+                <HBox spacing="15.0">
+                    <ComboBox fx:id="endHourComboBox" prefWidth="70.0">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="07"/>
+                                <String fx:value="08"/>
+                                <String fx:value="09"/>
+                                <String fx:value="10"/>
+                                <String fx:value="11"/>
+                                <String fx:value="12"/>
+                                <String fx:value="13"/>
+                                <String fx:value="14"/>
+                                <String fx:value="15"/>
+                                <String fx:value="16"/>
+                                <String fx:value="17"/>
+                                <String fx:value="18"/>
+                                <String fx:value="19"/>
+                                <String fx:value="20"/>
+                                <String fx:value="21"/>
+                                <String fx:value="22"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                    <ComboBox fx:id="endMinuteComboBox" prefWidth="70.0">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="00"/>
+                                <String fx:value="15"/>
+                                <String fx:value="30"/>
+                                <String fx:value="45"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+            </HBox>
+
+            <!-- Book Button -->
+            <HBox alignment="CENTER" spacing="15.0">
+                <Button text="Book Table" fx:id="bookButton" style="-fx-font-size: 14px;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
