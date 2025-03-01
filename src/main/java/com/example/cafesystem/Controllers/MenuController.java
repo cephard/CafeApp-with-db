@@ -203,4 +203,12 @@ public class MenuController extends UIController {
            System.out.println(availableItems.get(stackPane));
         }
     }
+
+    public void loadMainMenu(){
+        try {
+            UIController.setRoot("/mainMenu");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

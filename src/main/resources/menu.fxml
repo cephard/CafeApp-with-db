@@ -316,7 +316,7 @@
    <bottom>
         <HBox alignment="BOTTOM_RIGHT" fillHeight="false" spacing="20.0" BorderPane.alignment="CENTER">
            <children>
-               <Button styleClass="main-button" text="Back" />
+               <Button styleClass="main-button" text="Back" onMouseClicked="#loadMainMenu"/>
                <Button onMouseClicked="#openCart" styleClass="main-button" text="Cart" />
            </children>
          <BorderPane.margin>

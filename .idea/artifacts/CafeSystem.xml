@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="CafeSystem">
+    <output-path>$PROJECT_DIR$/out/artifacts/CafeSystem</output-path>
+    <root id="root">
+      <element id="archive" name="CafeSystem.jar">
+        <element id="module-output" name="CafeSystem" />
+      </element>
+    </root>
+  </artifact>
+</component>

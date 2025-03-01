@@ -7,11 +7,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class BookTableController {
+public class BookTableController extends UIController {
 
+    @FXML private Button backButton;
     @FXML
     private ComboBox<String> tableTypeComboBox;
 
@@ -110,5 +112,13 @@ public class BookTableController {
         alert.setTitle(title);
         alert.setContentText(content);
         alert.showAndWait();
+    }
+
+    public void setBackButton() {
+        try {
+            UIController.setRoot("/mainMenu");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
